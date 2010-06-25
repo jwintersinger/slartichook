@@ -15,8 +15,10 @@ def post_list(request):
 
   return render_to_response('blog/post_list.html', {'posts': Post.objects.all()})
 
-def post_detail(request):
-  pass
+def post_detail(request, slug):
+  post = Post.objects.all()
+  post.filter('slug =', slug)
+  return render_to_response('blog/post_detail.html', {'post': post.fetch(1)[0]})
 
 def post_archive(request):
   pass
