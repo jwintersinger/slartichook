@@ -1,0 +1,5 @@
+*.pyc
+.*.swp
+.google_appengine
+appengine_django
+django.zip
