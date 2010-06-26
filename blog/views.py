@@ -21,4 +21,4 @@ def post_detail(request, slug):
   return render_to_response('blog/post_detail.html', {'post': post.fetch(1)[0]})
 
 def post_archive(request):
-  pass
+  return render_to_response('blog/post_archive.html', {'posts': Post.objects.all()})
