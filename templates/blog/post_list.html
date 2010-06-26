@@ -3,7 +3,7 @@
 {% load markup %}
 
 {% block content %}
-  {% for post in posts %}
+  {% for post in posts.object_list %}
     <div class="post">
       <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
       <h3>{{ post.created_at|date:"F jS, Y" }}</h3>
@@ -13,4 +13,11 @@
       {% include "blog/_post_tag_list.html" %}
     </div>
   {% endfor %}
+
+  {% if posts.has_previous %}
+    <a href="{% url blog.views.post_list page=posts.previous_page_number %}">Previous</a>
+  {% endif %}
+  {% if posts.has_next %}
+    <a href="{% url blog.views.post_list page=posts.next_page_number %}">Next</a>
+  {% endif %}
 {% endblock %}
