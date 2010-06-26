@@ -15,3 +15,17 @@ class Post(BaseModel):
     return urlresolvers.reverse('blog.views.post_detail', kwargs={
       'slug': self.slug
     })
+
+  def put(self):
+    if not self._is_slug_unique(self.slug):
+      raise SlugNotUniqueException('Slug "%s" is not unique' % self.slug)
+    return super(Post, self).put()
+
+  def _is_slug_unique(self, slug):
+    posts = Post.objects.all()
+    posts.filter('slug =', slug)
+    return posts.count(1) == 0
+
+
+class SlugNotUniqueException(Exception):
+  pass

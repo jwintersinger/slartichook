@@ -25,7 +25,7 @@ def _create_test_post():
     body = 'Socks.\n\n* Whoa\n* Yeah',
     #user = users.get_current_user(),
     tags = [db.Category('bonners'), db.Category('cheese'), db.Category('weiners')],
-    slug = 'slug',
+    slug = 'phallus',
   )
   p.put()
 
