@@ -8,7 +8,7 @@ def post_list(request):
     title = 'Happy happy',
     body = 'Socks.',
     #user = users.get_current_user(),
-    tags = [db.Category('bonners')],
+    tags = [db.Category('bonners'), db.Category('cheese'), db.Category('weiners')],
     slug = 'slug',
   )
   p.put()

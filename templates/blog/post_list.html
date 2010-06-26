@@ -1,10 +1,16 @@
 {% extends "base.html" %}
 {% block title %}Blog{% endblock %}
+{% load markup %}
 
 {% block content %}
-  Hello.
-
   {% for post in posts %}
-    <h1>{{ post.title }}</h1>
+    <div class="post">
+      <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
+      <h3>{{ post.created_at|date:"F jS, Y" }}</h3>
+
+      <p>{{ post.body|safe }}</p>
+
+      {% include "blog/_post_tag_list.html" %}
+    </div>
   {% endfor %}
 {% endblock %}

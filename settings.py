@@ -93,6 +93,7 @@ TEMPLATE_DIRS = (
 INSTALLED_APPS = (
     'appengine_django',
     'blog',
+    'django.contrib.markup',
     #'django.contrib.auth',
     #'django.contrib.contenttypes',
     #'django.contrib.sessions',
