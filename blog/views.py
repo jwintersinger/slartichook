@@ -6,7 +6,7 @@ from google.appengine.ext import db
 def post_list(request):
   p = Post(
     title = 'Happy happy',
-    body = 'Socks.',
+    body = 'Socks.\n\n* Whoa\n* Yeah',
     #user = users.get_current_user(),
     tags = [db.Category('bonners'), db.Category('cheese'), db.Category('weiners')],
     slug = 'slug',

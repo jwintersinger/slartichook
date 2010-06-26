@@ -8,7 +8,7 @@
       <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
       <h3>{{ post.created_at|date:"F jS, Y" }}</h3>
 
-      <p>{{ post.body|safe|markdown }}</p>
+      {{ post.body|safe|markdown }}
 
       {% include "blog/_post_tag_list.html" %}
     </div>
