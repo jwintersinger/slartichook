@@ -1,7 +1,13 @@
 {% extends "base.html" %}
+{% load markup %}
+
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
   <h1>{{ post.title }}</h1>
-  {{ post.body }}
+  {{ post.created_at|date:"F jS, Y" }}
+
+  {{ post.body|safe|markdown }}
+
+  {% include "blog/_post_tag_list.html" %}
 {% endblock %}
