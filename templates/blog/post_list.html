@@ -1,5 +1,10 @@
-Hello.
+{% extends "base.html" %}
+{% block title %}Blog{% endblock %}
 
-{% for post in posts %}
-  <h1>{{ post.title }}</h1>
-{% endfor %}
+{% block content %}
+  Hello.
+
+  {% for post in posts %}
+    <h1>{{ post.title }}</h1>
+  {% endfor %}
+{% endblock %}
