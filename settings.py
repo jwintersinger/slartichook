@@ -8,6 +8,7 @@ TEMPLATE_DEBUG = DEBUG
 ADMINS = (
     ('Jeff', 'jeff.slartibartfast@micand.com'),
 )
+CONTACT_TO = 'jeff@micand.com'
 
 MANAGERS = ADMINS
 

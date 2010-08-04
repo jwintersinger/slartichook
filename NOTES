@@ -1,0 +1,1 @@
+Rather than starting development server via "manage.py runserver", if I want e-mail functionality to work so that I can use the contact form, I must run "dev_appserver.py --smtp_host=localhost --smtp_port=1025 <app_dir>". This is because "manage.py runserver" provides no means of specifying e-mail command-line options.
