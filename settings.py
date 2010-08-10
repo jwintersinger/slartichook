@@ -96,6 +96,7 @@ INSTALLED_APPS = (
     'django.contrib.markup',
     'blog',
     'contact',
+    'home',
     #'django.contrib.auth',
     #'django.contrib.contenttypes',
     #'django.contrib.sessions',
