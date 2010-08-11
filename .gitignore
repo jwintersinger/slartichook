@@ -5,5 +5,5 @@ appengine_django
 django.zip
 markdown
 site_media/css/blueprint/
-site_media/images/mockup.png
-site_media/images/guide.png
+site_media/images/design/mockup.png
+site_media/images/design/guide.png

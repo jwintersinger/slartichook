@@ -9,7 +9,7 @@
   width: 1018px;
   height: 1090px;
 
-  background-image: url('../images/guide.png');
+  background-image: url('../images/design/guide.png');
   opacity: 0.3;
   z-index: -9999;
 }
@@ -25,7 +25,7 @@
 body {
   font-size: 0.75em;
   background-color: white;
-  background-image: url('../images/background_pattern.png');
+  background-image: url('../images/design/background_pattern.png');
 }
 
 body, textarea {
@@ -86,7 +86,7 @@ p:last-child {
 
 .section_label_background {
   float: left;
-  background-image: url('../images/section_label_pattern.png');
+  background-image: url('../images/design/section_label_pattern.png');
   background-repeat: repeat-y;
   position: relative;
   left: -32px;
@@ -189,12 +189,12 @@ p:last-child {
   /* Add background colour so that page content not visible behind header when
    * user scrolls down page. */
   background-color: #f2f2f2;
-  background-image: url('../images/header_background.png');
+  background-image: url('../images/design/header_background.png');
   z-index: 1;
 }
 
 #header_bottom_border {
-  background-image: url('../images/header_bottom_border.png');
+  background-image: url('../images/design/header_bottom_border.png');
   background-repeat: repeat-x;
   background-position: left bottom;
   height: 78px;
@@ -209,7 +209,7 @@ p:last-child {
 #header_content h1 {
   width: 386px;
   height: 84px;
-  background-image: url('../images/logo.png');
+  background-image: url('../images/design/logo.png');
   margin-top: 18px;
   float: left;
   position: relative;
@@ -257,7 +257,7 @@ p:last-child {
 #about .section_label {
   width: 12px;
   height: 66px;
-  background-image: url('../images/about.png');
+  background-image: url('../images/design/about.png');
 }
 
 #about_intro {
@@ -281,14 +281,14 @@ p:last-child {
    * swap occurs. */
   width: 12px;
   height: 12px;
-  background-image: url('../images/dot_inactive.png');
+  background-image: url('../images/design/dot_inactive.png');
   background-repeat: no-repeat;
   float: left;
   cursor: pointer;
 }
 
-#about_tidbits .trigger.active { background-image: url('../images/dot_active.png'); }
-#about_tidbits .trigger:hover  { background-image: url('../images/dot_hover.png');  }
+#about_tidbits .trigger.active { background-image: url('../images/design/dot_active.png'); }
+#about_tidbits .trigger:hover  { background-image: url('../images/design/dot_hover.png');  }
 
 #about_tidbits_container {
   width: 10000px;
@@ -322,7 +322,7 @@ p:last-child {
 #work .section_label {
   width: 12px;
   height: 60px;
-  background-image: url('../images/work.png');
+  background-image: url('../images/design/work.png');
 }
 
 
@@ -379,12 +379,12 @@ p:last-child {
   cursor: pointer;
 }
 
-.project_image_controls   .prev          { background-image: url('../images/arrow_left_active.png');  }
-.project_image_controls   .next          { background-image: url('../images/arrow_right_active.png'); }
-.project_image_controls   .prev:hover    { background-image: url('../images/arrow_left_hover.png');   }
-.project_image_controls   .next:hover    { background-image: url('../images/arrow_right_hover.png');   }
-.project_image_controls   .prev.disabled { background-image: url('../images/arrow_left_disabled.png');   }
-.project_image_controls   .next.disabled { background-image: url('../images/arrow_right_disabled.png');   }
+.project_image_controls   .prev          { background-image: url('../images/design/arrow_left_active.png');  }
+.project_image_controls   .next          { background-image: url('../images/design/arrow_right_active.png'); }
+.project_image_controls   .prev:hover    { background-image: url('../images/design/arrow_left_hover.png');   }
+.project_image_controls   .next:hover    { background-image: url('../images/design/arrow_right_hover.png');   }
+.project_image_controls   .prev.disabled { background-image: url('../images/design/arrow_left_disabled.png');   }
+.project_image_controls   .next.disabled { background-image: url('../images/design/arrow_right_disabled.png');   }
 
 .project_images .image_viewport,
   .project_description .project_image_controls         { width: 239px;                                       }
@@ -415,10 +415,10 @@ p:last-child {
 .project_tidbits .project_tidbit { margin-bottom: 1.2em;  }
 .project_tidbits ul              { list-style-type: none; }
 
-.project_tidbit.my_roles     > h3 { background-image: url('../images/my_roles.png');     }
-.project_tidbit.languages    > h3 { background-image: url('../images/languages.png');    }
-.project_tidbit.technologies > h3 { background-image: url('../images/technologies.png'); }
-.project_tidbit.show_me      > h3 { background-image: url('../images/show_me.png');      }
+.project_tidbit.my_roles     > h3 { background-image: url('../images/design/my_roles.png');     }
+.project_tidbit.languages    > h3 { background-image: url('../images/design/languages.png');    }
+.project_tidbit.technologies > h3 { background-image: url('../images/design/technologies.png'); }
+.project_tidbit.show_me      > h3 { background-image: url('../images/design/show_me.png');      }
 
 
 /*------------
@@ -460,7 +460,7 @@ p:last-child {
 #contact .section_label {
   width: 12px;
   height: 89px;
-  background-image: url('../images/contact.png');
+  background-image: url('../images/design/contact.png');
 }
 
 #contact_form                { border-color: #cbcbcb;  }
@@ -472,7 +472,7 @@ p:last-child {
 #contact_form .label_and_error {
   width: 328px;
   height: 30px;
-  background-image: url('../images/label_and_error_background.png');
+  background-image: url('../images/design/label_and_error_background.png');
   background-repeat: no-repeat;
 }
 
