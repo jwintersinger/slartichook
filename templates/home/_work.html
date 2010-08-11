@@ -1,3 +1,5 @@
+{% load markup %}
+
 <div id="work" class="span-24 section_content">
   <div id="work_left_border" class="span-24">
     <div class="hor_border left"></div>
@@ -9,17 +11,17 @@
 
         <div id="project_detail_viewport" class="span-17">
           <div id="projects_detail_container">
-            <div class="project_detail active">
-              <h2 class="prepend-1 clearfix">Twitinerary</h2>
+          {% for project in project_list %}
+            <div class="project_detail {% if forloop.first %} active {% endif %}">
+              <h2 class="prepend-1 clearfix">{{ project.name }}</h2>
 
-              <div id="work.twitinerary" class="project_description prepend-1 span-7 append-2">
+              <div id="work.{{ project.id }}" class="project_description prepend-1 span-7 append-2">
                 <div class="project_images">
                   <div class="image_viewport">
                     <div class="image_container">
-                      <img src="{{ MEDIA_URL }}images/projects/map.png" class="active" alt="Map" />
-                      <img src="{{ MEDIA_URL }}images/projects/map.png" alt="Map" />
-                      <img src="{{ MEDIA_URL }}images/projects/map.png" alt="Map" />
-                      <img src="{{ MEDIA_URL }}images/projects/map.png" alt="Map" />
+                    {% for image in project.tidbits.images %}
+                    <img src="{{ MEDIA_URL }}images/projects/{{ project.id }}/{{ image }}" class="{% if forloop.first %} active {% endif %}" alt="Image for {{ project.name }}" />
+                    {% endfor %}
                     </div>
                   </div>
 
@@ -29,16 +31,7 @@
                   </div>
                 </div>
 
-                <p>I built this tweet scheduler on Google App Engine. It brought me
-                such joy that mere words do not suffice. Here, at length, I will
-                type out a description, rather than relying on the designer's
-                standby of lorem ipsum.</p>
-
-                <p>Perhaps more text will appear in a second paragraph. Who's to
-                say in this crazy, topsy-turvy world? Here is a little more text.
-                Just a little. Word by word, we near the end. Once again, we
-                shall march forward to the vanishing point. Ahh, that nearly does
-                it. Almost there.</p>
+                {{ project.long_desc|safe|markdown }}
               </div>
 
               <!-- Note need to specify "last" class for last column inside
@@ -46,18 +39,19 @@
               container. -->
               <div class="project_tidbits span-7 last">
                 <div class="project_tidbit my_roles">
-                  <h3>My Roles</h3>
-                  <p>Backend, front-end, Javascript</p>
+                  <h3>My Role{{ project.tidbits.my_roles|pluralize }}</h3>
+                  <p>{{ project.tidbits.my_roles|join:", " }}</p>
                 </div>
 
                 <div class="project_tidbit languages">
-                  <h3>Languages</h3>
-                  <p>Python, Javascript</p>
+                  <h3>Language{{ project.tidbits.languages|pluralize }}</h3>
+                  <p>{{ project.tidbits.languages|join:", " }}</p>
                 </div>
 
                 <div class="project_tidbit technologies">
+                  {# "Technologies" intentionally left plural, even if multiple present. I think it sounds better that way.#}
                   <h3>Technologies</h3>
-                  <p>Django, jQuery, Google App Engine</p>
+                  <p>{{ project.tidbits.technologies|join:", " }}</p>
                 </div>
 
                 <div class="project_tidbit show_me">
@@ -69,26 +63,19 @@
                 </div>
               </div>
             </div>
+          {% endfor %}
           </div>
         </div>
 
         <div id="project_list" class="span-7 last">
           <h2>Work</h2>
           <ol>
-            <li id="twitinerary_trigger" class="project active">
-              <h4>01. Twitinerary</h4>
-              <p>A tweet scheduler.</p>
+            {% for project in project_list %}
+            <li id="{{ project.id }}_trigger" class="project {% if forloop.first %} active {% endif %}">
+              <h4>{{ forloop.counter }}. {{ project.name }}</h4>
+              <p>{{ project.short_desc }}</p>
             </li>
-
-            <li id="gee_pee_trigger" class="project">
-              <h4>02. Gee Pee</h4>
-              <p>An evolutionary programming system.</p>
-            </li>
-
-            <li id="slartibartfast_trigger" class="project">
-              <h4>03. Slartibartfast</h4>
-              <p>What powers this web site.</p>
-            </li>
+          {% endfor %}
           </ol>
         </div>
       </div>

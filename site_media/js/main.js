@@ -36,9 +36,6 @@ function Miscellany() {
 
 Miscellany.prototype._configure_miscellany = function() {
   this._clone_content('.about_tidbit', 3);
-  this._clone_content('.project_detail', 7);
-  $('.project_detail.active').not(':first').removeClass('active');
-  this._clone_content('#slartibartfast_trigger', 5);
   this._configure_guide_toggler();
 
   var router = this._configure_router();

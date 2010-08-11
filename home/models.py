@@ -31,12 +31,15 @@ class ProjectParser:
     self._lines = [line.strip() for line in raw_project.strip().split('\n')]
 
   def parse(self):
+    joiner = lambda lines: '\n'.join(lines)
+
     project = {
       'name':       self._lines.pop(0),
-      'short_desc': self._read_until_blank(),
+      'short_desc': joiner(self._read_until_blank()),
       'tidbits':    self._parse_tidbits(self._read_until_blank()),
-      'long_desc':  markdown('\n'.join(self._lines))
+      'long_desc':  joiner(self._lines),
     }
+    project['id'] = self._format_id(project['name'])
     return project
 
   def _read_until_blank(self):
@@ -54,6 +57,9 @@ class ProjectParser:
     tidbits = {}
     for line in raw_tidbits:
       name, values = line.split(':', 1)
-      name = name.lower().replace(' ', '_').strip()
+      name = self._format_id(name)
       tidbits[name] = [value.strip() for value in values.split(',')]
     return tidbits
+
+  def _format_id(self, label):
+    return label.lower().replace(' ', '_').strip()
