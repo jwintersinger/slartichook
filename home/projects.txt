@@ -8,7 +8,7 @@ Slartichook
   In developing my portfolio, I sought to present a considerable amount of
   information without compromising on clarity or usability. Stymied by my own
   graphic design ineptitude,  I turned to my graphic designer friend
-  [http://alexswanson.net](Alex Swanson), who built a beautiful design around
+  [Alex Swanson](http://alexswanson.net/), who built a beautiful design around
   which I could structure this site.
 
   Building on my favoured platform of Django, I deployed on Google App Engine
@@ -32,14 +32,14 @@ Alexswan
   My Roles: backend, front-end Javascript
 
   Just as I turned to my good friend and graphic designer
-  [http://alexswanson.net](Alex Swanson) when I wanted a design for my
+  [Alex Swanson](http://alexswanson.net/) when I wanted a design for my
   portfolio, he turned to me when he required a backend for his. Using Django,
   I built a blog, work showcase, and contact form, leveraging Django's included
   admin section, commenting support, RSS/Atom generation, and sitemap creator
   to provide a great deal of functionality without writing reams of code.
 
   I also used jQuery to help Alex subtly enhance the user experience, most
-  notably seen in the [http://alexswanson.net](Work section).
+  notably seen in the [Work section](http://alexswanson.net/work/).
 
 
 Gee Pee
@@ -58,7 +58,7 @@ Gee Pee
   intensive computations to run while maintaining a responsive user interface.
 
   Gee Pee is based on the techniques presented in
-  [http://www.gp-field-guide.org.uk/](_A Field Guide to Genetic Programming_).
+  [_A Field Guide to Genetic Programming_](http://www.gp-field-guide.org.uk/).
 
 
 Towers of Hanoi
@@ -68,14 +68,13 @@ Towers of Hanoi
   Technologies: HTML5 Canvas
   My Roles: everything
 
-  Towers of Hanoi is an implementation of the
-  [http://en.wikipedia.org/wiki/Towers_of_hanoi](classic Towers of Hanoi)
-  puzzle using HTML5 Canvas. Given the ability to play with a user-specified
-  number of disks, the user quickly gains an appreciation for how the number of
-  steps required to reach a solution grows exponentially with the number of
-  disks. As my first project exploiting Canvas, it opened my eyes to the
-  possibilities offered by HTML5, ones which previously required relying on
-  something such as Flash. 
+  Towers of Hanoi is an implementation of the [classic Towers of Hanoi
+  puzzle](http://en.wikipedia.org/wiki/Towers_of_hanoi) puzzle using HTML5
+  Canvas. Given the ability to play with a user-specified number of disks, the
+  user quickly gains an appreciation for how the number of steps required to
+  reach a solution grows exponentially with the number of disks. As my first
+  project exploiting Canvas, it opened my eyes to the possibilities offered by
+  HTML5, ones which previously required relying on something such as Flash. 
 
 
 Twitinerary
@@ -87,7 +86,7 @@ Twitinerary
 
   Twitinerary is a tweet-scheduling webapp built on Google App Engine and
   Django, which I built in collaboration with my designer friend
-  [http://alexswanson.net](Alex Swanson). Based on a desire for a simple but
+  [Alex Swanson](http://alexswanson.net/). Based on a desire for a simple but
   graceful tweet scheduler, I threw a prototype together as a means of learning
   App Engine, then gradually refined it based on brainstorming sessions with
   Alex. Though we planned to integrate a comely user interface design by Alex
@@ -103,7 +102,7 @@ Twitinerary
 
   A prime challenge in building Twitinerary was to interface with Twitter's
   OAuth API. Beginning from a base of Mike Knapp's
-  [http://github.com/mikeknapp/AppEngine-OAuth-Library/](AppEngine-OAuth-Library),
+  [AppEngine-OAuth-Library](http://github.com/mikeknapp/AppEngine-OAuth-Library/),
   I rewrote most of the code as I became intimately familiar with the rather
   complex OAuth protocol, fixing a number of bugs and adding new functionality
   in the process. Though I eventually planned to release my work as a separate
@@ -161,7 +160,7 @@ Ts3Query
   My Roles: everything
 
   Ts3Query is a webapp that lists users connected to a server for the VOIP
-  application [http://teamspeak.com/](TeamSpeak 3). Developed to scratch my own
+  application [TeamSpeak 3](http://teamspeak.com/). Developed to scratch my own
   itch shortly after the release of TeamSpeak 3, I built on the web.py
   framework, for it allowed me to work in Python without the structural
   overhead of a larger framework. Though the user interface is wanting, the
@@ -203,7 +202,7 @@ Shoutcast Recorder
 
   Shoutcast Recorder is a command-line Ruby application that allows one to
   record audio streamed from Shoutcast servers, such as music broadcast by the
-  superb [http://somafm.com/](Soma FM). Using metadata broadcast by the server,
+  superb [SomaFM](http://somafm.com/). Using metadata broadcast by the server,
   recorded audio is broken up into files corresponding to individual "songs,"
   allowing one to listen to broadcast music when he lacks Internet
   connectivity, such as on a pre-iPhone portable music player. The user may
@@ -218,7 +217,7 @@ Cathy Parser
   Languages: Python
   My Roles: everything
 
-  Cathy Parser queries the records produced by [http://www.mtg.sk/rva/](Cathy),
+  Cathy Parser queries the records produced by [Cathy](http://www.mtg.sk/rva/),
   a file-indexing application helpful in cataloguing files stored on removeable
   media. Back in my Windows-using days, I had indexed several hundred discs,
   but found myself unable to use the resulting records from the Linux
@@ -236,7 +235,7 @@ RSS Downloader
   RSS Downloader is an elementary command-line Python script that allows one to
   periodically retreive an RSS or Atom feed listing files, downloading any of
   interest.  Such functionality is primarily of use with a Bittorrent client
-  such as [http://libtorrent.rakshasa.no/](rTorrent), which can be configured
+  such as [rTorrent](http://libtorrent.rakshasa.no/), which can be configured
   to automatically begin downloading any torrents which appear in a given
   directory. Via the command line, one specifies a pattern listing just what
   files should be fetched by RSS Downloader, which subsequently invokes Wget to
@@ -250,7 +249,7 @@ Core Networks Status
   My Roles: everything
 
   Core Networks status is a simple Python script that interfaces with dedicated
-  server provider [http://corenetworks.net](Core Networks) to retrieve one's
+  server provider [CoreNetworks](http://corenetworks.net) to retrieve one's
   bandwidth usage and time until bill due. The script uses Python's urllib2 to
   authenticate with Core Networks, store the resulting authentication cookie,
   and retrieve the several pages containing pertinent information.
@@ -262,7 +261,7 @@ Elements of Computing Systems Exercises
   Languages: Python, book-specific Hardware Description Language
   My Roles: Everything
 
-  [http://www1.idc.ac.il/tecs/](_The Elements of Computing Systems_) is a book
+  [_The Elements of Computing Systems_](http://www1.idc.ac.il/tecs/) is a book
   which has the reader build a functioning computer architecture in software,
   beginning with nothing more than a NAND and DFF gate and culminating in the
   creation of a Java-like OOP programming language. Each chapter focuses on one
