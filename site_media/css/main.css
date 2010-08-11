@@ -1,0 +1,534 @@
+/*=====
+  Guide
+  =====*/
+#guide {
+  display: none;
+  position: absolute;
+  top: 110px;
+  left: 119px;
+  width: 1018px;
+  height: 1090px;
+
+  background-image: url('../images/guide.png');
+  opacity: 0.3;
+  z-index: -9999;
+}
+
+* {
+  z-index: 0;
+}
+
+
+/*================
+  General elements
+  ================*/
+body {
+  font-size: 0.75em;
+  background-color: white;
+  background-image: url('../images/background_pattern.png');
+}
+
+body, textarea {
+  font-family: Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.6em; }
+h3 { font-size: 1.2em; }
+
+a {
+  color: black;
+  text-decoration: none;
+  border-bottom-width: 1px;
+  border-bottom-style: dotted;
+}
+
+a:hover { color: #427bda; }
+
+
+/*p {
+  margin-bottom: 1em;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}*/
+
+
+
+/*===============
+  General classes
+  ===============*/
+.section {
+  border-bottom: 1px solid #c9c9c9;
+  border-top: 1px solid #fefefe;
+}
+
+.section_content {
+  padding: 40px 0 40px 0;
+}
+
+/* Can't use :first-child pseudo class, as #header is a sibling, meaning
+ * first_section is *not* the first child of its parent. */
+.section.first {
+  margin-top: 78px;
+  border-top-style: none;
+}
+
+.section.last {
+  border-bottom-style: none;
+}
+
+.section_label_background {
+  float: left;
+  background-image: url('../images/section_label_pattern.png');
+  background-repeat: repeat-y;
+  position: relative;
+  left: -32px;
+}
+
+.section_label {
+  position: absolute;
+  left: 7px;
+  top: 16px;
+}
+
+.section_label > span {
+  display: none;
+}
+
+
+
+/*================================
+  Relative positioning pixel hacks
+  ================================*/
+.container {
+  margin: 0 auto 0 auto;
+  position: relative;
+}
+
+#about_intro {
+  position: relative;
+  left: 32px;
+}
+
+#about_tidbits {
+  position: relative;
+  left: 42px;
+  top: -5px;
+}
+
+#project_detail_viewport {
+  position: relative;
+  left: 333px;
+  width: 649px;
+}
+
+#project_list {
+  position: relative;
+  left: 323px;
+  /* Shift down 1px so that last project in list aligns with border on bottom
+   * of work section. */
+  top: 1px;
+  padding-left: 0px;
+}
+
+#work .project_tidbits {
+  position: relative;
+  left: -12px;
+}
+
+#work .section_label {
+  left: 302px;
+}
+
+#work_content {
+  background-position: 294px 0;
+}
+
+#project_list > h2, #project_list .project > *  {
+  padding-left: 35px;
+}
+
+#work_right_border {
+  position: relative;
+  left: -301px;
+}
+
+#work .hor_border.right {
+  position: relative;
+  left: -300px;
+}
+
+#contact_form {
+  position: relative;
+  left: -11px;
+}
+
+#contact_misc {
+  position: relative;
+  top: 3px;
+}
+
+
+
+/*======
+  Header
+  ======*/
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 74px;
+  /* Add background colour so that page content not visible behind header when
+   * user scrolls down page. */
+  background-color: #f2f2f2;
+  background-image: url('../images/header_background.png');
+  z-index: 1;
+}
+
+#header_bottom_border {
+  background-image: url('../images/header_bottom_border.png');
+  background-repeat: repeat-x;
+  background-position: left bottom;
+  height: 78px;
+}
+
+#header_content {
+  width: 950px;
+  margin: 0 auto 0 auto;
+}
+
+
+#header_content h1 {
+  width: 386px;
+  height: 84px;
+  background-image: url('../images/logo.png');
+  margin-top: 18px;
+  float: left;
+  position: relative;
+  left: -64px;
+}
+
+#header_content h1 span {
+  display: none;
+}
+
+#navigation {
+  float: right;
+  bottom: 0px;
+  margin-top: 42px;
+}
+
+#navigation li {
+  float: left;
+  list-style-type: none;
+  margin-left: 4em;
+}
+
+#navigation li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: black;
+  border-bottom-style: none;
+}
+
+
+
+/*=====
+  About
+  =====*/
+/*----------
+  Miscellany
+  ----------*/
+#about {
+  /* Extra top padding since this is first section. */
+  padding-top: 60px;
+}
+
+#about .section_label {
+  width: 12px;
+  height: 66px;
+  background-image: url('../images/about.png');
+}
+
+#about_intro {
+  border-color: #cbcbcb;
+}
+
+
+/*-------------
+  About tidbits
+  -------------*/
+#about_tidbits .triggers {
+  height: 11px;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+#about_tidbits .trigger {
+  margin-right: 8px;
+  /* Even though :hover and .active dots are only 11x11 px, set dimensions to
+   * 12x12 px to prevent adjacent dots from shifting horizontally when image
+   * swap occurs. */
+  width: 12px;
+  height: 12px;
+  background-image: url('../images/dot_inactive.png');
+  background-repeat: no-repeat;
+  float: left;
+  cursor: pointer;
+}
+
+#about_tidbits .trigger.active { background-image: url('../images/dot_active.png'); }
+#about_tidbits .trigger:hover  { background-image: url('../images/dot_hover.png');  }
+
+#about_tidbits_container {
+  width: 10000px;
+}
+
+#about_tidbits_viewport {
+  overflow: hidden;
+}
+
+.about_tidbit {
+  float: left;
+  width: 270px;
+}
+
+
+
+/*====
+  Work
+  ====*/
+/*----------
+  Miscellany
+  ----------*/
+#work {
+  padding-left: 6px;
+}
+
+#work_content {
+  padding-top: 25px;
+}
+
+#work .section_label {
+  width: 12px;
+  height: 60px;
+  background-image: url('../images/work.png');
+}
+
+
+/*-------
+  Borders
+  -------*/
+#work_left_border  { border-left: 1px solid #cbcbcb;  }
+#work_right_border { border-right: 1px solid #cbcbcb; }
+
+#work .hor_border {
+  width: 28px;
+  border-bottom: 1px solid #cbcbcb;
+}
+
+#work .hor_border.left  { float: left;  }
+#work .hor_border.right { float: right; }
+
+
+/*--------------
+  Project detail
+  --------------*/
+#project_detail_viewport                   { overflow: hidden;     }
+#projects_detail_container                 { width: 10000px;       }
+#projects_detail_container .project_detail { float: left;          }
+.project_detail > h2                       { margin-bottom: 0.6em; }
+.project_detail .project_images            { margin-bottom: 1.3em; }
+
+.project_description .project_images img {
+  display: block;
+  float: left;
+}
+
+
+/*---------------------------------------
+  Project detail image switching controls
+  ---------------------------------------*/
+.project_description .project_image_controls {
+  display: none;
+  position: absolute; /* Remove from normal flow so showing element doesn't reposition others. */
+  height: 50px;
+
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 0 0 12px 12px;
+  -moz-border-radius: 0 0 12px 12px;
+  -webkit-border-radius: 0 0 12px 12px;
+}
+
+.project_image_controls .prev, .project_image_controls .next {
+  width: 50%;
+  height: 100%;
+  float: left;
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+}
+
+.project_image_controls   .prev          { background-image: url('../images/arrow_left_active.png');  }
+.project_image_controls   .next          { background-image: url('../images/arrow_right_active.png'); }
+.project_image_controls   .prev:hover    { background-image: url('../images/arrow_left_hover.png');   }
+.project_image_controls   .next:hover    { background-image: url('../images/arrow_right_hover.png');   }
+.project_image_controls   .prev.disabled { background-image: url('../images/arrow_left_disabled.png');   }
+.project_image_controls   .next.disabled { background-image: url('../images/arrow_right_disabled.png');   }
+
+.project_images .image_viewport,
+  .project_description .project_image_controls         { width: 239px;                                       }
+.project_images .image_viewport                        { overflow: hidden;                                   }
+
+.project_images .image_container {
+  width: 100000px;
+  /* Position must be set to relative so that .image_container becomes the
+   * offset parent of project images -- otherwise, offsets of images during
+   * horizontal scrolling become more difficult to calculate. */
+  position: relative;
+}
+
+
+/*---------------
+  Project tidbits
+  ---------------*/
+.project_tidbits h3 {
+  /* Can't simply use background-position with negative x position, as this
+   * places background image outside element's bounding box, where it isn't
+   * visible. */
+  position: relative;
+  left: -27px;
+  padding-left: 27px;
+  background-repeat: no-repeat;
+}
+
+.project_tidbits .project_tidbit { margin-bottom: 1.2em;  }
+.project_tidbits ul              { list-style-type: none; }
+
+.project_tidbit.my_roles     > h3 { background-image: url('../images/my_roles.png');     }
+.project_tidbit.languages    > h3 { background-image: url('../images/languages.png');    }
+.project_tidbit.technologies > h3 { background-image: url('../images/technologies.png'); }
+.project_tidbit.show_me      > h3 { background-image: url('../images/show_me.png');      }
+
+
+/*------------
+  Project list
+  ------------*/
+#project_list .project {
+  padding: 9px 0px 5px 1px;
+  cursor: pointer;
+}
+
+#project_list .project a {
+  color: black;
+  text-decoration: none;
+}
+
+#project_list .project.active {
+  /* Subtract 1px from paddings to compensate for border. Can't use margins due
+   * to CSS' collapsing margins -- see
+   * http://reference.sitepoint.com/css/collapsingmargins. */
+  padding: 8px 0px 4px 0px;
+  border: 1px solid #cbcbcb;
+  border-left-color: #f2f2f2;
+}
+
+#project_list .project:hover                                   { background-color: rgba(0, 0, 0, 0.03); }
+#project_list .project,        #project_list .project p        { color: #999; }
+#project_list .project.active, #project_list .project.active p { color: black; }
+#project_list .project:hover,  #project_list .project:hover p  { color: #427bda; }
+
+#project_list .project > h4 { margin-bottom: 0.1em;  } 
+#project_list          > h2 { margin-bottom: 0.2em;  } 
+#project_list            ol { list-style-type: none; }
+
+
+
+/*=======
+  Contact
+  =======*/
+#contact .section_label {
+  width: 12px;
+  height: 89px;
+  background-image: url('../images/contact.png');
+}
+
+#contact_form                { border-color: #cbcbcb;  }
+#contact_form h2             { margin-bottom: 16px;    }
+#contact_form #message_input { height: 9em;            }
+#contact_form .field         { height: 4em;            }
+#contact_form .field *       { float: left;            }
+
+#contact_form .label_and_error {
+  width: 328px;
+  height: 30px;
+  background-image: url('../images/label_and_error_background.png');
+  background-repeat: no-repeat;
+}
+
+#contact_form label {
+  width: 102px;
+  height: 22px;
+  margin: 2px;
+  padding: 2px;
+  padding-left: 4px;
+  font-weight: bold;
+}
+
+#contact_form input[type=text] {
+  width: 234px;
+  height: 26px;
+  margin-left: 22px;
+  padding: 1px 2px;
+}
+
+#contact_form input[type=text], #contact_form textarea  { border: 1px solid black; }
+#contact_form label, #contact_form input[type=submit]   { font-size: 1.2em;        }
+#contact_form input[type=submit], #contact_form .status { color: white;            }
+
+/* Seemingly not necessary from my testing, but added just in case. */
+#contact_form textarea, #contact_form input[type=submit] { clear: both; }
+
+#contact_form input[type=submit] {
+  float: right;
+  margin: 0;
+  margin-top: 10px;
+  border-width: 0;
+  padding: 0.7em 4em;
+
+  background-color: black;
+  font-weight: bold;
+}
+
+#contact_form .status {
+  float: left;
+  margin-top: 6px;
+  margin-left: 10px;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  padding: 0px 10px;
+
+  background-color: #909090;
+}
+
+
+
+/*======
+  Footer
+  ======*/
+#footer {
+  padding: 20px 0 15px 0;
+  font-size: 0.8em;
+  opacity: 0.5;
+}

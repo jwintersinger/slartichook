@@ -1,5 +1,190 @@
-Weiner.
+{% extends "base.html" %}
+{% block content %}
+  <div class="section first">
+    <!-- Blueprint's grid.css demands that this div be given a class of
+    "container," not an ID of same. -->
+    <div class="container">
+      <div id="about" class="span-24 section_content">
+        <div class="section_label_background span-24">
+          <h2 class="section_label"><span>About</span></h2>
 
-{% for project in project_list %}
-  <h1>{{ project.name }}</h1>
-{% endfor %}
+          <div id="about_intro" class="prepend-1 span-15 colborder">
+            <h2>Programmer extraordinaire</h2>
+            <p>I'm a 24-year-old programmer extraordinaire residing in Calgary,
+            Canada. I specialize in building polished and secure Web sites using
+            DJango and jQuery, though I also work with numerous other languages
+            and frameworks, including PHP and Ruby on Rails. My programming
+            acumen is equalled only by my Linux and BSD sysadmin skills, which
+            garner considerable respect on the streets.</p>
+          </div>
+
+          <div id="about_tidbits" class="span-7 last">
+            <div class="triggers">
+              <div class="trigger active"></div>
+              <div class="trigger"></div>
+              <div class="trigger"></div>
+              <div class="trigger"></div>
+            </div>
+
+            <div id="about_tidbits_viewport">
+              <div id="about_tidbits_container">
+                <div class="about_tidbit">
+                  <h3>I have a painstaking eye for detail.</h3>
+                  <p>Computers are fussy about the little things, and as someone who
+                  speaks their language, so am I. When you work with me, you can rest
+                  easy knowing that every i will be dotted and every t crossed.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div id="work" class="span-24 section_content">
+        <div id="work_left_border" class="span-24">
+          <div class="hor_border left"></div>
+          <div class="hor_border right"></div>
+
+          <div id="work_right_border" class="span-24">
+            <div id="work_content" class="section_label_background span-24">
+              <h2 class="section_label"><span>Work</span></h2>
+
+              <div id="project_detail_viewport" class="span-17">
+                <div id="projects_detail_container">
+                  <div class="project_detail active">
+                    <h2 class="prepend-1 clearfix">Twitinerary</h2>
+
+                    <div id="work.twitinerary" class="project_description prepend-1 span-7 append-2">
+                      <div class="project_images">
+                        <div class="image_viewport">
+                          <div class="image_container">
+                            <img src="{{ MEDIA_URL }}images/map.png" class="active" alt="Map" />
+                            <img src="{{ MEDIA_URL }}images/map.png" alt="Map" />
+                            <img src="{{ MEDIA_URL }}images/map.png" alt="Map" />
+                            <img src="{{ MEDIA_URL }}images/map.png" alt="Map" />
+                          </div>
+                        </div>
+
+                        <div class="project_image_controls">
+                          <div class="prev"></div>
+                          <div class="next"></div>
+                        </div>
+                      </div>
+
+                      <p>I built this tweet scheduler on Google App Engine. It brought me
+                      such joy that mere words do not suffice. Here, at length, I will
+                      type out a description, rather than relying on the designer's
+                      standby of lorem ipsum.</p>
+
+                      <p>Perhaps more text will appear in a second paragraph. Who's to
+                      say in this crazy, topsy-turvy world? Here is a little more text.
+                      Just a little. Word by word, we near the end. Once again, we
+                      shall march forward to the vanishing point. Ahh, that nearly does
+                      it. Almost there.</p>
+                    </div>
+
+                    <!-- Note need to specify "last" class for last column inside
+                    containing div, even if more columns to right of that
+                    container. -->
+                    <div class="project_tidbits span-7 last">
+                      <div class="project_tidbit my_roles">
+                        <h3>My Roles</h3>
+                        <p>Backend, front-end, Javascript</p>
+                      </div>
+
+                      <div class="project_tidbit languages">
+                        <h3>Languages</h3>
+                        <p>Python, Javascript</p>
+                      </div>
+
+                      <div class="project_tidbit technologies">
+                        <h3>Technologies</h3>
+                        <p>Django, jQuery, Google App Engine</p>
+                      </div>
+
+                      <div class="project_tidbit show_me">
+                        <h3>Show Me</h3>
+                        <ul>
+                          <li><a href="#">View the live site</a></li>
+                          <li><a href="#">View the source code</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="project_list" class="span-7 last">
+                <h2>Work</h2>
+                <ol>
+                  <li id="twitinerary_trigger" class="project active">
+                    <h4>01. Twitinerary</h4>
+                    <p>A tweet scheduler.</p>
+                  </li>
+
+                  <li id="gee_pee_trigger" class="project">
+                    <h4>02. Gee Pee</h4>
+                    <p>An evolutionary programming system.</p>
+                  </li>
+
+                  <li id="slartibartfast_trigger" class="project">
+                    <h4>03. Slartibartfast</h4>
+                    <p>What powers this web site.</p>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <div class="hor_border left"></div>
+          <div class="hor_border right"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div id="contact" class="span-24 section_content">
+        <div class="section_label_background">
+          <h2 class="section_label"><span>About</span></h2>
+
+          <div id="contact_form" class="prepend-2 span-15 colborder">
+            <h2 class="clearfix">Contact Me</h2>
+
+            <form method="post" action="">
+              <div class="field">
+                <div class="label_and_error">
+                  <label for="name_input">Your name:</label>
+                  <div class="status">Oh, dear.</div>
+                </div>
+                <input name="name" id="name_input" type="text" />
+              </div>
+
+              <div class="field">
+                <div class="label_and_error">
+                  <label for="email_input">Your e-mail:</label>
+                  <div class="status"></div>
+                </div>
+                <input name="email" id="email_input" type="text" />
+              </div>
+
+              <textarea id="message_input" class="span-15"></textarea>
+
+              <input type="submit" value="Send your message" />
+            </form>
+          </div>
+
+          <div id="contact_misc" class="span-6 last">
+            <h3>Don't be shy</h3>
+            <p>Reach out and touch me today. I promise I won't scream.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
