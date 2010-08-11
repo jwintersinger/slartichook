@@ -48,7 +48,6 @@ Gee Pee
 
   Languages: Javascript
   Techonlogies: HTML5 Web Workers, HTML5 Canvas
-  My Roles: Everything
 
   Gee Pee is a ruidimentary genetic programming system that attempts to produce
   a mathematical expression approximating the trigonometric function
@@ -67,7 +66,6 @@ Towers of Hanoi
 
   Languages: Javascript
   Technologies: HTML5 Canvas
-  My Roles: Everything
 
   Towers of Hanoi is an implementation of the [classic Towers of Hanoi
   puzzle](http://en.wikipedia.org/wiki/Towers_of_hanoi) using HTML5 Canvas.
@@ -116,7 +114,6 @@ Enchanted Washcloth
 
   Languages: Ruby, Javascript
   Technologies: Ruby on Rails, Prototype
-  My Roles: Everything
 
   The first (and only, alas) complex project I built in Rails, Enchanted
   Washcloth is a discussion forum system similar to systems such as phpBB and
@@ -158,7 +155,6 @@ Ts3Query
 
   Languages: Python, Javascript
   Technologies: web.py, jQuery
-  My Roles: Everything
 
   Ts3Query is a webapp that lists users connected to a server for the VOIP
   application [TeamSpeak 3](http://teamspeak.com/). Developed to scratch my own
@@ -173,7 +169,6 @@ Capribup
   A backup script.
 
   Languages: Ruby
-  My Roles: Everything
 
   Capribup is a backup utility capable of archiving directory trees or
   PostgreSQL databases. Intended to be run periodically as a cronjob, Capribup
@@ -199,7 +194,6 @@ Shoutcast Recorder
   A streaming audio recorder.
 
   Languages: Ruby
-  My Roles: Everything
 
   Shoutcast Recorder is a command-line Ruby application that allows one to
   record audio streamed from Shoutcast servers, such as music broadcast by the
@@ -216,7 +210,6 @@ Cathy Parser
   A querier for file index records.
 
   Languages: Python
-  My Roles: Everything
 
   Cathy Parser queries the records produced by [Cathy](http://www.mtg.sk/rva/),
   a file-indexing application helpful in cataloguing files stored on removeable
@@ -231,7 +224,6 @@ RSS Downloader
   An RSS/Atom file downloader.
 
   Languages: Python
-  My Roles: Everything
 
   RSS Downloader is an elementary command-line Python script that allows one to
   periodically retreive an RSS or Atom feed listing files, downloading any of
@@ -247,7 +239,6 @@ CoreNetworks Status
   An account monitor for a server provider.
 
   Languages: Python
-  My Roles: Everything
 
   Core Networks status is a simple Python script that interfaces with dedicated
   server provider [CoreNetworks](http://corenetworks.net) to retrieve one's
@@ -260,7 +251,6 @@ Elements of Computing Systems
   Solutions for computer-building book.
 
   Languages: Python, book-specific hardware description language
-  My Roles: Everything
 
   [_The Elements of Computing Systems_](http://www1.idc.ac.il/tecs/) is a book
   which has the reader build a functioning computer architecture in software,
