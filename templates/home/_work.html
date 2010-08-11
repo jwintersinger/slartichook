@@ -38,21 +38,27 @@
               containing div, even if more columns to right of that
               container. -->
               <div class="project_tidbits span-7 last">
+              {% if project.tidbits.my_roles %}
                 <div class="project_tidbit my_roles">
                   <h3>My Role{{ project.tidbits.my_roles|pluralize }}</h3>
                   <p>{{ project.tidbits.my_roles|join:", " }}</p>
                 </div>
+              {% endif %}
 
+              {% if project.tidbits.languages %}
                 <div class="project_tidbit languages">
                   <h3>Language{{ project.tidbits.languages|pluralize }}</h3>
                   <p>{{ project.tidbits.languages|join:", " }}</p>
                 </div>
+              {% endif %}
 
+              {% if project.tidbits.technologies %}
                 <div class="project_tidbit technologies">
                   {# "Technologies" intentionally left plural, even if multiple present. I think it sounds better that way.#}
                   <h3>Technologies</h3>
                   <p>{{ project.tidbits.technologies|join:", " }}</p>
                 </div>
+              {% endif %}
 
                 <div class="project_tidbit show_me">
                   <h3>Show Me</h3>
