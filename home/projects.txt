@@ -1,5 +1,5 @@
 Slartichook
-  What powers this web site. Built on Google App Engine and Django, with an emphasis on an elegant use of Javascript.
+  What powers this web site.
 
   Languages: Python, Javascript
   Technologies: Django, jQuery, Google App Engine
@@ -26,7 +26,7 @@ Slartichook
 
 
 Alexswan
-  The Django-powered backend for the portfolio and blog of my designer friend.
+  The backend for a friend's portfolio.
 
   Languages: Python, Javascript
   Technologies: Django, jQuery
@@ -44,7 +44,7 @@ Alexswan
 
 
 Gee Pee
-  A rudimentary genetic programming system built in Javascript and HTML 5.
+  A genetic programming system.
 
   Languages: Javascript
   Techonlogies: HTML5 Web Workers, HTML5 Canvas
@@ -63,23 +63,23 @@ Gee Pee
 
 
 Towers of Hanoi
-  An interactive implementation of the classic Towers of Hanoi problem in HTML5.
+  The classic math puzzle.
 
   Languages: Javascript
   Technologies: HTML5 Canvas
   My Roles: Everything
 
   Towers of Hanoi is an implementation of the [classic Towers of Hanoi
-  puzzle](http://en.wikipedia.org/wiki/Towers_of_hanoi) puzzle using HTML5
-  Canvas. Given the ability to play with a user-specified number of disks, the
-  user quickly gains an appreciation for how the number of steps required to
-  reach a solution grows exponentially with the number of disks. As my first
-  project exploiting Canvas, it opened my eyes to the possibilities offered by
-  HTML5, ones which previously required relying on something such as Flash. 
+  puzzle](http://en.wikipedia.org/wiki/Towers_of_hanoi) using HTML5 Canvas.
+  Given the ability to play with a user-specified number of disks, the user
+  quickly gains an appreciation for how the number of steps required to reach a
+  solution grows exponentially with the number of disks. As my first project
+  exploiting Canvas, it opened my eyes to the possibilities offered by HTML5,
+  ones which previously required relying on something such as Flash. 
 
 
 Twitinerary
-  A tweet-scheduling app built using Google App Engine and jQuery UI.
+  A tweet scheduler.
 
   Languages: Python, Javascript
   Technologies: Google App Engine, Django, jQuery, jQuery UI
@@ -112,7 +112,7 @@ Twitinerary
 
 
 Enchanted Washcloth
-  A discussion forum system built on Ruby on Rails.
+  A discussion forum.
 
   Languages: Ruby, Javascript
   Technologies: Ruby on Rails, Prototype
@@ -154,7 +154,7 @@ Enchanted Washcloth
 
 
 Ts3Query
-  A webapp that lists the users on a server for the VOIP application TeamSpeak 3.
+  A TeamSpeak status monitor.
 
   Languages: Python, Javascript
   Technologies: web.py, jQuery
@@ -170,7 +170,7 @@ Ts3Query
 
 
 Capribup
-  A backup script intended to be run from cron, capable of arching directory trees or PostgreSQL databases.
+  A backup script.
 
   Languages: Ruby
   My Roles: Everything
@@ -196,7 +196,7 @@ Capribup
 
 
 Shoutcast Recorder
-  An application to record audio broadcast by a Shoutcast server, with each "song" in a separate file.
+  A streaming audio recorder.
 
   Languages: Ruby
   My Roles: Everything
@@ -213,7 +213,7 @@ Shoutcast Recorder
 
 
 Cathy Parser
-  An application to query records used by file-indexing app Cathy, whose file format I reverse engineered.
+  A querier for file index records.
 
   Languages: Python
   My Roles: Everything
@@ -228,7 +228,7 @@ Cathy Parser
 
 
 RSS Downloader
-  A simple script to download files listed in an RSS or Atom feed, ideal for use with Bittorrent clients.
+  An RSS/Atom file downloader.
 
   Languages: Python
   My Roles: Everything
@@ -243,8 +243,8 @@ RSS Downloader
   perform the transfer.
 
 
-Core Networks Status
-  A means of listing bandwidth usage and time until bill due for accounts with server provider Core Networks.
+CoreNetworks Status
+  An account monitor for a server provider.
 
   Languages: Python
   My Roles: Everything
@@ -256,10 +256,10 @@ Core Networks Status
   and retrieve the several pages containing pertinent information.
 
 
-Elements of Computing Systems Exercises
-  Solutions for exercises accompanying The Elements of Computing Systems, in which the reader builds a rudimentary computer from logic gates.
+Elements of Computing Systems
+  Solutions for computer-building book.
 
-  Languages: Python, book-specific Hardware Description Language
+  Languages: Python, book-specific hardware description language
   My Roles: Everything
 
   [_The Elements of Computing Systems_](http://www1.idc.ac.il/tecs/) is a book
