@@ -20,7 +20,7 @@
                   <div class="image_viewport">
                     <div class="image_container">
                     {% for image in project.tidbits.images %}
-                    <img src="{{ MEDIA_URL }}images/projects/{{ project.id }}/{{ image }}" class="{% if forloop.first %} active {% endif %}" alt="Image for {{ project.name }}" />
+                      <img src="{{ MEDIA_URL }}images/projects/{{ project.id }}/{{ image }}" class="{% if forloop.first %} active {% endif %}" alt="Image for {{ project.name }}" />
                     {% endfor %}
                     </div>
                   </div>
@@ -79,7 +79,7 @@
             {% for project in project_list %}
             <li id="{{ project.id }}_trigger" class="project {% if forloop.first %} active {% endif %}">
               <h4>{{ forloop.counter }}. {{ project.name }}</h4>
-              <p>{{ project.short_desc }}</p>
+              {{ project.short_desc|safe|markdown }}
             </li>
           {% endfor %}
           </ol>

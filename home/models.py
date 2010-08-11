@@ -1,5 +1,4 @@
 import os
-from markdown import markdown
 
 class Work:
   @staticmethod

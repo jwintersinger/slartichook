@@ -247,7 +247,7 @@ CoreNetworks Status
   and retrieve the several pages containing pertinent information.
 
 
-Elements of Computing Systems
+Computing Systems Exercises
   Solutions for computer-building book.
 
   Languages: Python, book-specific hardware description language
