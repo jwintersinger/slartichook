@@ -1,1 +1,8 @@
 Implement uniqueness constraint for blog post slug.
+Concerns over scroll position of projects when page reloaded after being manually scrolled
+
+Design:
+  Extend "about" vertical border
+  Blog section
+  Ensure header is right-aligned
+  Text shadows on headers
