@@ -1,8 +1,10 @@
 # Django settings for slartichook project.
 import os
-from settings_deployment import *
 
+DEBUG = os.environ['SERVER_SOFTWARE'].lower().startswith('dev')
 TEMPLATE_DEBUG = DEBUG
+
+from settings_deployment import *
 
 MANAGERS = ADMINS
 
