@@ -51,16 +51,9 @@ a {
   border-bottom-style: dotted;
 }
 
-a:hover { color: #427bda; }
-
-
-/*p {
-  margin-bottom: 1em;
-}
-
-p:last-child {
-  margin-bottom: 0;
-}*/
+a:hover      { color: #427bda;     }
+p            { margin-bottom: 1em; }
+p:last-child { margin-bottom: 0;   }
 
 
 
