@@ -1,19 +1,8 @@
 # Django settings for slartichook project.
-
 import os
+from settings_deployment import *
 
-DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-
-ADMINS = (
-    ('Jeff', 'jeff.slartichook@micand.com'),
-)
-CONTACT_TO = 'jeff@micand.com'
-CONTACT = {
-  'to':   'jeff@micand.com',
-  'from': 'micand@gmail.com', # Must be registered admin of application. See http://code.google.com/appengine/docs/python/mail/sendingmail.html.
-
-}
 
 MANAGERS = ADMINS
 
@@ -46,7 +35,7 @@ SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
-USE_I18N = True
+USE_I18N = False
 
 # If you set this to False, Django will not format dates, numbers and
 # calendars according to the current locale
@@ -65,9 +54,6 @@ MEDIA_URL = '/site_media/'
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
 ADMIN_MEDIA_PREFIX = '/media/'
-
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = 'This key is a secret. I am not going to tell you what it is.'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
