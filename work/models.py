@@ -1,8 +1,8 @@
 import os
 
-class Work:
+class Project:
   @staticmethod
-  def projects():
+  def all():
     filename = os.path.join(os.path.dirname(__file__), 'projects.txt').replace('\\', '/')
     return ProjectListParser(filename).parse()
 
