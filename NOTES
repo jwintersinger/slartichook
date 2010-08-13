@@ -1,1 +1,17 @@
-Rather than starting development server via "manage.py runserver", if I want e-mail functionality to work so that I can use the contact form, I must run "dev_appserver.py --smtp_host=localhost --smtp_port=1025 <app_dir>". This is because "manage.py runserver" provides no means of specifying e-mail command-line options.
+Commands:
+  Run development server:
+    dev_appserver.py --smtp_host=localhost --smtp_port=1025
+
+  Run test e-mail server in dev environment:
+    python -m smtpd -n -c DebuggingServer localhost:1025
+
+  Deploy:
+    appcfg.py update .
+
+
+Explanations:
+  Rather than starting development server via "manage.py runserver", if I want
+  e-mail functionality to work so that I can use the contact form, I must run
+  "dev_appserver.py --smtp_host=localhost --smtp_port=1025 <app_dir>". This is
+  because "manage.py runserver" provides no means of specifying e-mail
+  command-line options.
