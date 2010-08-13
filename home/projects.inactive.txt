@@ -1,0 +1,67 @@
+Enchanted Washcloth
+  A discussion forum.
+
+  Languages: Ruby, Javascript
+  Technologies: Ruby on Rails, Prototype
+
+  The first (and only, alas) complex project I built in Rails, Enchanted
+  Washcloth is a discussion forum system similar to systems such as phpBB and
+  vBulletin. Built several years ago just as Rails 2.0 was entering beta, I
+  intended to retain the basic structure established by most forum systems,
+  while improving several key elements. Rather than requiring the user to click
+  through a number of sub-forums to read all recent posts, I allowed the user
+  to read all threads by viewing a single containing "root" forum.
+  Additionally, I offered the then-novel technique of storing the per-user read
+  state of each thread on the server rather than on the client, allowing the
+  user to read a thread on one computer, with the thread then marked as such on
+  any other computers accessed by the user.
+
+  I began the projeect with the intent of replace the Invision forum used by a
+  small gaming community I administered, but ultimately failed -- I focused
+  unduly on "scratching my own itch" to the exclusion of less interesting
+  features demanded by my userbase. Though the project did not meet my
+  expectations, it allowed me to mature as a programmer. I realized that no
+  matter how elegant my code was, the only factor that mattered was the end
+  product's usability, for that was the only element with which my users could
+  interact.
+
+  Enchanted Washcloth was also the first project on which I practiced
+  test-driven development. Following the test-driven craze that gripped the
+  Rails community, I strived to achieve complete test coverage, covering
+  several routine cases and every edge case I could imagine for each piece of
+  the app's functionality. At one point, I had four-and-a-half lines of test
+  code for every line of application code. Ultimately, I came to appreciate
+  that test-drven development and automated tests in general offer great value
+  for projects contributed to by multiple programmers over extended periods of
+  time, but that the burden testing imposes may be too great for the
+  single-developer, short-lived project that Enchanted Washcloth ultimately
+  was. Though my tests were excellent, they were invisible to the user, and did
+  not compensate for my project's other shortcomings.
+
+
+RSS Downloader
+  An RSS/Atom file downloader.
+
+  Languages: Python
+
+  RSS Downloader is an elementary command-line Python script that allows one to
+  periodically retreive an RSS or Atom feed listing files, downloading any of
+  interest.  Such functionality is primarily of use with a Bittorrent client
+  such as [rTorrent](http://libtorrent.rakshasa.no/), which can be configured
+  to automatically begin downloading any torrents which appear in a given
+  directory. Via the command line, one specifies a pattern listing just what
+  files should be fetched by RSS Downloader, which subsequently invokes Wget to
+  perform the transfer.
+
+
+CoreNetworks Status
+  An account monitor for a server provider.
+
+  Languages: Python
+
+  Core Networks status is a simple Python script that interfaces with dedicated
+  server provider [CoreNetworks](http://corenetworks.net) to retrieve one's
+  bandwidth usage and time until bill due. The script uses Python's urllib2 to
+  authenticate with Core Networks, store the resulting authentication cookie,
+  and retrieve the several pages containing pertinent information.
+

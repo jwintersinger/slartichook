@@ -1,6 +1,6 @@
 Commands:
   Run development server:
-    dev_appserver.py --smtp_host=localhost --smtp_port=1025
+    dev_appserver.py --smtp_host=localhost --smtp_port=1025 .
 
   Run test e-mail server in dev environment:
     python -m smtpd -n -c DebuggingServer localhost:1025

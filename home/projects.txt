@@ -6,23 +6,19 @@ Slartichook
   My Roles: Backend, front-end Javascript, markup, CSS
   Images: map.png
 
-  In developing my portfolio, I sought to present a considerable amount of
-  information without compromising on clarity or usability. Stymied by my own
-  graphic design ineptitude,  I turned to my graphic designer friend
-  [Alex Swanson](http://alexswanson.net/), who built a beautiful design around
+  In developing my portfolio, I sought to present considerable information
+  without compromising usability. Stymied by my own graphic design ineptitude,
+  I turned to my graphic designer friend [Alex
+  Swanson](http://alexswanson.net/), who crafted a beautiful design around
   which I could structure this site.
 
   Building on my favoured platform of Django, I deployed on Google App Engine
-  to almost obviate concerns over hosting and reliability, and to gain more
-  experience working with non-relational databases. My focus throughout the
-  project was to build an elegant and highly usable site, relying on Javascript
-  to subtly enhance the user experience without breaking essential
-  functionality such as the browser's back button or the ability to link to
-  certain sections. Rather than rely on pre-built jQuery effects, I
-  painstakingly rolled my own to create effects I've not seen elsewhere, such
-  as the scrolling border around the active element in the project list.
-  Altogether, though this project is relatively small, I believe it succeeds in
-  demonstrating my abilities, which is its primary purpose.
+  to reduce concerns of hosting and reliability, and to gain more experience
+  working with non-relational databases. My focus throughout the project was on
+  elegance and usability, with Javascript used to subtly enhance the user
+  experience. Rather than draw on pre-built jQuery effects, I painstakingly
+  rolled my own novel ones, such as the transition between active elements in
+  the project list.
 
 
 Alexswan
@@ -32,15 +28,14 @@ Alexswan
   Technologies: Django, jQuery
   My Roles: Backend, front-end Javascript
 
-  Just as I turned to my good friend and graphic designer
-  [Alex Swanson](http://alexswanson.net/) when I wanted a design for my
-  portfolio, he turned to me when he required a backend for his. Using Django,
-  I built a blog, work showcase, and contact form, leveraging Django's included
+  I wrote the backend for my graphic designer friend [Alex
+  Swanson](http://alexswanson.net)'s portfolio, encompassing a blog, work
+  showcase, and contact form. Building on Django, I leveraged its built-in
   admin section, commenting support, RSS/Atom generation, and sitemap creator
   to provide a great deal of functionality without writing reams of code.
 
-  I also used jQuery to help Alex subtly enhance the user experience, most
-  notably seen in the [Work section](http://alexswanson.net/work/).
+  Also notable is our subtle enhancement of the user experience via Javascript,
+  most evident in the [Work section](http://alexswanson.net/work/).
 
 
 Gee Pee
@@ -49,13 +44,14 @@ Gee Pee
   Languages: Javascript
   Techonlogies: HTML5 Web Workers, HTML5 Canvas
 
-  Gee Pee is a ruidimentary genetic programming system that attempts to produce
+  Gee Pee is a ruidimentary genetic programming system that strives to produce
   a mathematical expression approximating the trigonometric function
   f(x)=sin(x) over a given domain, using only the four arithmetical operators.
   Written entirely in Javascript, Gee Pee runs in a web browser and takes
-  advantage of HTML5's Canvas and Web Workers -- the former allows it to
-  graphically render its progress in real time, while the latter allows its
-  intensive computations to run while maintaining a responsive user interface.
+  advantage of HTML5's Canvas and Web Workers -- the former permits graphical
+  rendering of its progress in real time, while the latter allows its intensive
+  computations to run in a separate thread, maintaining a responsive user
+  interface.
 
   Gee Pee is based on the techniques presented in
   [_A Field Guide to Genetic Programming_](http://www.gp-field-guide.org.uk/).
@@ -67,13 +63,12 @@ Towers of Hanoi
   Languages: Javascript
   Technologies: HTML5 Canvas
 
-  Towers of Hanoi is an implementation of the [classic Towers of Hanoi
-  puzzle](http://en.wikipedia.org/wiki/Towers_of_hanoi) using HTML5 Canvas.
-  Given the ability to play with a user-specified number of disks, the user
-  quickly gains an appreciation for how the number of steps required to reach a
-  solution grows exponentially with the number of disks. As my first project
-  exploiting Canvas, it opened my eyes to the possibilities offered by HTML5,
-  ones which previously required relying on something such as Flash. 
+  Towers of Hanoi is an implementation of the classic Towers of Hanoi puzzle
+  using HTML5 Canvas.  Given the ability to play with a user-specified number
+  of disks, the user quickly gains an appreciation for how the number of steps
+  required to reach a solution grows exponentially with the number of disks. As
+  my first project exploiting Canvas, it opened my eyes to the possibilities
+  offered by HTML5, which previously required Flash.
 
 
 Twitinerary
@@ -83,71 +78,25 @@ Twitinerary
   Technologies: Google App Engine, Django, jQuery, jQuery UI
   My Roles: Backend, front-end
 
-  Twitinerary is a tweet-scheduling webapp built on Google App Engine and
-  Django, which I built in collaboration with my designer friend
-  [Alex Swanson](http://alexswanson.net/). Based on a desire for a simple but
-  graceful tweet scheduler, I threw a prototype together as a means of learning
-  App Engine, then gradually refined it based on brainstorming sessions with
-  Alex. Though we planned to integrate a comely user interface design by Alex
-  and deploy the app to the masses, after becoming aware of the proliferation
-  of other similar apps, we abandoned Twitinerary for other projects.
+  Twitinerary is a tweet scheduler built on Google App Engine and Django, which
+  I created in collaboration with my designer friend [Alex
+  Swanson](http://alexswanson.net/). Based on his desire for a simple but
+  graceful tweet scheduler, I wrote a rough prototype as a means of learning
+  App Engine, then gradually fleshed it out based on brainstorming sessions
+  with Alex. Though we planned to integrate a user interface created by Alex
+  and deploy the app to the masses, we abandoned Twitinerary for other projects
+  before reaching completion.
 
-  My focus was on building a rich user interface using jQuery UI, eliminating
-  transitions between pages for the same responsive feel achieved by other
-  modern web apps. Twitinterary is noteworthy for eliminating the need for the
-  user to concern himself with time zones, for all times are converted from the
-  user's local time zone into UTC on the client before being transmitted to the
-  server. URL shortening and image uploading support are built-in.
+  My focus throughout the project was on building a rich user interface using
+  jQuery UI, eliminating transitions between pages. Noteworthy is Twitinerary's
+  time handling, which deals solely in the user's local time zone URL
+  shortening and image uploading support are built-in.
 
   A prime challenge in building Twitinerary was to interface with Twitter's
   OAuth API. Beginning from a base of Mike Knapp's
   [AppEngine-OAuth-Library](http://github.com/mikeknapp/AppEngine-OAuth-Library/),
-  I rewrote most of the code as I became intimately familiar with the rather
-  complex OAuth protocol, fixing a number of bugs and adding new functionality
-  in the process. Though I eventually planned to release my work as a separate
-  project entitled OhAuth, I abandoned this notion when Alex and I halted
-  development on Twitinerary.
-
-
-Enchanted Washcloth
-  A discussion forum.
-
-  Languages: Ruby, Javascript
-  Technologies: Ruby on Rails, Prototype
-
-  The first (and only, alas) complex project I built in Rails, Enchanted
-  Washcloth is a discussion forum system similar to systems such as phpBB and
-  vBulletin. Built several years ago just as Rails 2.0 was entering beta, I
-  intended to retain the basic structure established by most forum systems,
-  while improving several key elements. Rather than requiring the user to click
-  through a number of sub-forums to read all recent posts, I allowed the user
-  to read all threads by viewing a single containing "root" forum.
-  Additionally, I offered the then-novel technique of storing the per-user read
-  state of each thread on the server rather than on the client, allowing the
-  user to read a thread on one computer, with the thread then marked as such on
-  any other computers accessed by the user.
-
-  I began the projeect with the intent of replace the Invision forum used by a
-  small gaming community I administered, but ultimately failed -- I focused
-  unduly on "scratching my own itch" to the exclusion of less interesting
-  features demanded by my userbase. Though the project did not meet my
-  expectations, it allowed me to mature as a programmer. I realized that no
-  matter how elegant my code was, the only factor that mattered was the end
-  product's usability, for that was the only element with which my users could
-  interact.
-
-  Enchanted Washcloth was also the first project on which I practiced
-  test-driven development. Following the test-driven craze that gripped the
-  Rails community, I strived to achieve complete test coverage, covering
-  several routine cases and every edge case I could imagine for each piece of
-  the app's functionality. At one point, I had four-and-a-half lines of test
-  code for every line of application code. Ultimately, I came to appreciate
-  that test-drven development and automated tests in general offer great value
-  for projects contributed to by multiple programmers over extended periods of
-  time, but that the burden testing imposes may be too great for the
-  single-developer, short-lived project that Enchanted Washcloth ultimately
-  was. Though my tests were excellent, they were invisible to the user, and did
-  not compensate for my project's other shortcomings.
+  I rewrote most of the code as I became intimately familiar with OAuth, fixing
+  a number of bugs and adding new functionality as I went.
 
 
 Ts3Query
@@ -158,11 +107,10 @@ Ts3Query
 
   Ts3Query is a webapp that lists users connected to a server for the VOIP
   application [TeamSpeak 3](http://teamspeak.com/). Developed to scratch my own
-  itch shortly after the release of TeamSpeak 3, I built on the web.py
-  framework, for it allowed me to work in Python without the structural
-  overhead of a larger framework. Though the user interface is wanting, the
-  underlying library which interfaces with the query interface exposed by
-  TeamSpeak 3 is both robust and flexible.
+  itch, I built on web.py, which let me work in Python without imposing the
+  overhead of a larger framework. Though the user interface was clearly
+  designed by a programmer, the underlying library which interfaces with
+  Teamspeak's query interface is both robust and flexible.
 
 
 Capribup
@@ -170,24 +118,21 @@ Capribup
 
   Languages: Ruby
 
-  Capribup is a backup utility capable of archiving directory trees or
+  Capribup is a backup script capable of archiving directory trees or
   PostgreSQL databases. Intended to be run periodically as a cronjob, Capribup
-  allows the user to specify how many backups to retain, as well as a ruleset
-  describing by age exactly what backups should be kept. In this way, it avoids
-  the pitfall common to many simple backup systems, in which only the most
-  recent backups are kept; under this scheme, if an error is introduced into
-  your data that predates the oldest retained backup, you have no means of
-  recovering the proper data. Capribup instead encourages the user to retain
-  backups of a certain age -- one can, for example, keep backups from each of
-  the last five days, one from a month ago, and one from six months ago.
+  has the user specify a ruleset describing by age what backups should be kept.
+  It thus avoids the pitfall common to many simple backup systems, in which
+  only a few of the most recent backups are kept, meaning that an error
+  introduced into your data that predates your most recent backup is
+  unrecoverable. Capribup instead encourages the user to retain more extensive
+  backups -- one can, for example, keep a backup from six months ago, one from
+  a month ago, and ones from each of the last five days.
 
   Though Capribup is limited to backing up directory trees and PostgreSQL
   databases, it could easily be extended to also deal with other data sources.
   The name is derived from the notion of a capricious backup agent, which I
   always found inordinately amusing, given that capricousness would perhaps be
-  one of the least desireable qualities in a backup utility; sadly, Capribup
-  has not lived up to its name, for it has proved all too reliable in my use to
-  date.
+  one of the least desireable qualities in a backup utility.
 
 
 Shoutcast Recorder
@@ -196,14 +141,11 @@ Shoutcast Recorder
   Languages: Ruby
 
   Shoutcast Recorder is a command-line Ruby application that allows one to
-  record audio streamed from Shoutcast servers, such as music broadcast by the
-  superb [SomaFM](http://somafm.com/). Using metadata broadcast by the server,
-  recorded audio is broken up into files corresponding to individual "songs,"
-  allowing one to listen to broadcast music when he lacks Internet
-  connectivity, such as on a pre-iPhone portable music player. The user may
-  specify the amount of audio to be recorded either by duration or by
-  cumulative file size. Implementing this application revealed to me the power
-  and elegance of finite state machines
+  record audio streamed from Shoutcast servers, based on a finite state
+  machine. Using metadata broadcast by the server, recorded audio is broken up
+  into files corresponding to individual tracks, allowing one to listen to
+  broadcast music when he lacks Internet connectivity. The user may specify the
+  amount of audio to be recorded either by duration or by cumulative file size.
 
 
 Cathy Parser
@@ -216,35 +158,8 @@ Cathy Parser
   media. Back in my Windows-using days, I had indexed several hundred discs,
   but found myself unable to use the resulting records from the Linux
   command-line environment that I now prefer. As Cathy stores its records in an
-  undocumented (albeit unobfuscated) binary blob, I meticulously reverse
-  engineered its file format and implemented a parser in Python.
-
-
-RSS Downloader
-  An RSS/Atom file downloader.
-
-  Languages: Python
-
-  RSS Downloader is an elementary command-line Python script that allows one to
-  periodically retreive an RSS or Atom feed listing files, downloading any of
-  interest.  Such functionality is primarily of use with a Bittorrent client
-  such as [rTorrent](http://libtorrent.rakshasa.no/), which can be configured
-  to automatically begin downloading any torrents which appear in a given
-  directory. Via the command line, one specifies a pattern listing just what
-  files should be fetched by RSS Downloader, which subsequently invokes Wget to
-  perform the transfer.
-
-
-CoreNetworks Status
-  An account monitor for a server provider.
-
-  Languages: Python
-
-  Core Networks status is a simple Python script that interfaces with dedicated
-  server provider [CoreNetworks](http://corenetworks.net) to retrieve one's
-  bandwidth usage and time until bill due. The script uses Python's urllib2 to
-  authenticate with Core Networks, store the resulting authentication cookie,
-  and retrieve the several pages containing pertinent information.
+  undocumented binary blob, I reverse-engineered its file format and
+  implemented a parser in Python.
 
 
 Computing Systems Exercises
@@ -253,17 +168,16 @@ Computing Systems Exercises
   Languages: Python, book-specific hardware description language
 
   [_The Elements of Computing Systems_](http://www1.idc.ac.il/tecs/) is a book
-  which has the reader build a functioning computer architecture in software,
-  beginning with nothing more than a NAND and DFF gate and culminating in the
-  creation of a Java-like OOP programming language. Each chapter focuses on one
-  layer of the architecture, with the user building his own implementation at
-  the chapter's end. Given the book's expansive focus, its treatment of each
-  topic is necessarily brief, but it still succeeded in granting me an
-  appreciation of how the simplest logical elements give rise to the wonderful
-  complexity of a modern computer.  Futhermore, the book demonstrated excellent
-  use of test-driven development, for test scripts accompanied each project,
-  with the reader encouraged to iterate until his implementation passed all
-  tests.
+  that has the reader build a computer architecture in software, starting with
+  only a NAND and DFF gate and culminating in creating a Java-like OOP
+  programming language. Each chapter focuses on one layer of the architecture,
+  with the user building his own implementation at the chapter's end. Given the
+  book's expansive focus, its treatment of each topic is necessarily brief, but
+  it still succeeded in granting me an appreciation of how the simplest logical
+  elements give rise to the wonderful complexity of the modern computer.
+  Futhermore, the book demonstrated excellent use of test-driven development,
+  for test scripts accompanied each project, with the reader encouraged to
+  iterate until his implementation passes all tests.
 
   My implementations of the book's earlier projects, such as rudimentary logic
   gates and an arithmetical logic unit, are written in the book's own hardware
