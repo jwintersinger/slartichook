@@ -1,0 +1,23 @@
+<form method="post" action="{% url contact.views.contact %}">
+  <div class="field">
+    <div class="label_and_error">
+      <label for="id_name">Your name:</label>
+      <div class="status">{{ contact_form.name.errors }}</div>
+    </div>
+
+    {{ contact_form.name }}
+  </div>
+
+  <div class="field">
+    <div class="label_and_error">
+      <label for="id_email">Your e-mail:</label>
+      <div class="status">{{ contact_form.email.errors }}</div>
+    </div>
+
+    {{ contact_form.email }}
+  </div>
+
+  <div class="status">{{ contact_form.message.errors }}</div>
+  {{ contact_form.message }}
+  <input type="submit" value="Send your message" />
+</form>

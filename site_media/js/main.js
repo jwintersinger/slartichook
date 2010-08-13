@@ -458,33 +458,55 @@ UrlHashRouter.prototype.register_route = function(path, callback) {
   ContactForm
   ===========*/
 function ContactForm() {
-  $('#contact_form form').submit(function() {
-    var visible_elements = $(this).find('.label_and_error, input, textarea').toArray();
-    // Sort randomly.
-    visible_elements.sort(function(a, b) {
-      return Math.random() - 0.5;
-    });
+  var self = this;
 
-    var disappear = function(on_complete) {
-      if(visible_elements.length === 0) return on_complete();
+  $('#contact_form form').live('submit', function() {
+    var form = $(this);
 
-      var element = visible_elements.pop();
-      $(element).css('visibility', 'hidden');
-
-      setTimeout(function() { disappear(on_complete); }, 100);
-    };
-
-    var self = $(this);
-    disappear(function() {
-      var container = self.parent();
+    self._disappear(form, function() {
+      var container = form.parent();
       // Explicitly set height of container so that when its contents are
       // changed, elements below it don't reflow.
       container.css('height', container.height());
-      self.empty();
-      $('<p>Thanks!</p>').css('display', 'none').appendTo(self).slideDown();
+
+      $.ajax({
+        type: 'POST',
+        url: form.attr('action'),
+        data: form.serialize(),
+
+        error: function(xhr, text_status, error) {
+          console.log(arguments);
+        },
+
+        success: function(data, text_status, xhr) {
+          var new_form = $(data).css('display', 'none');
+          form.replaceWith(new_form);
+          new_form.slideDown();
+        }
+      });
     });
+
     return false;
   });
+}
+
+ContactForm.prototype._disappear = function(form, on_complete) {
+  var visible_elements = form.find('.label_and_error, input, textarea').toArray();
+  // Sort randomly.
+  visible_elements.sort(function(a, b) {
+    return Math.random() - 0.5;
+  });
+
+  var disappear = function() {
+    if(visible_elements.length === 0)
+      return on_complete();
+
+    var element = visible_elements.pop();
+    $(element).css('visibility', 'hidden');
+
+    setTimeout(disappear, 100);
+  };
+  disappear();
 }
 
 

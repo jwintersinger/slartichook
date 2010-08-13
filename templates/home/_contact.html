@@ -5,27 +5,7 @@
     <div id="contact_form" class="prepend-2 span-15 colborder">
       <h2 class="clearfix">Contact Me</h2>
 
-      <form method="post" action="">
-        <div class="field">
-          <div class="label_and_error">
-            <label for="name_input">Your name:</label>
-            <div class="status">Oh, dear.</div>
-          </div>
-          <input name="name" id="name_input" type="text" />
-        </div>
-
-        <div class="field">
-          <div class="label_and_error">
-            <label for="email_input">Your e-mail:</label>
-            <div class="status"></div>
-          </div>
-          <input name="email" id="email_input" type="text" />
-        </div>
-
-        <textarea id="message_input" class="span-15"></textarea>
-
-        <input type="submit" value="Send your message" />
-      </form>
+      {% include "contact/_form.html" %}
     </div>
 
     <div id="contact_misc" class="span-6 last">

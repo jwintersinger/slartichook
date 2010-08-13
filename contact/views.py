@@ -1,6 +1,4 @@
-from django.core.urlresolvers import reverse
-from django.http import HttpResponseRedirect
-from django.shortcuts import render_to_response
+from django.views.generic.simple import direct_to_template
 from google.appengine.api.mail import send_mail
 from miscellany.utils import render_email
 from settings import CONTACT_TO
@@ -8,19 +6,17 @@ from contact.forms import ContactForm
 from contact.models import Missive
 
 def contact(request):
-  if request.method == 'POST':
-    form = ContactForm(request.POST)
-    if form.is_valid():
-      form_data = form.cleaned_data
-      _send_contact_email(form_data)
-      _store_contact(form_data)
-      return HttpResponseRedirect(reverse('contact.views.contact_confirmation'))
-  else:
-    form = ContactForm()
-  return render_to_response('contact/form.html', {'form': form})
+  if request.method != 'POST':
+    raise Exception('Request type is not POST')
+  contact_form = ContactForm(request.POST)
 
-def contact_confirmation(request):
-  return render_to_response('contact/confirmation.html')
+  if contact_form.is_valid():
+    form_data = contact_form.cleaned_data
+    _send_contact_email(form_data)
+    _store_contact(form_data)
+    return direct_to_template(request, 'contact/_success.html')
+  return direct_to_template(request, 'contact/_form.html',
+    {'contact_form': contact_form})
 
 def _send_contact_email(form_data):
   subject, message = render_email(
