@@ -9,6 +9,11 @@ ADMINS = (
     ('Jeff', 'jeff.slartichook@micand.com'),
 )
 CONTACT_TO = 'jeff@micand.com'
+CONTACT = {
+  'to':   'jeff@micand.com',
+  'from': 'micand@gmail.com', # Must be registered admin of application. See http://code.google.com/appengine/docs/python/mail/sendingmail.html.
+
+}
 
 MANAGERS = ADMINS
 

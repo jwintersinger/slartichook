@@ -1,7 +1,7 @@
 from django.views.generic.simple import direct_to_template
 from google.appengine.api.mail import send_mail
 from miscellany.utils import render_email
-from settings import CONTACT_TO
+from settings import CONTACT
 from contact.forms import ContactForm
 from contact.models import Missive
 
@@ -24,14 +24,14 @@ def _send_contact_email(form_data):
     'contact/email_message.html',
     message      = form_data['message'],
     from_name    = form_data['name'],
-    from_address = form_data['email']
+    from_address = form_data['email'],
   )
   # BUG: with appengine_django, one should be able to use
   # django.core.mail.send_mail. This only works for Django 1.1, however --
   # Django 1.2 throws a variety of exceptions, as appengine_django hasn't
   # been properly updated for Django 1.2's mail code. Thus, I must use the
   # native mail API built into App Engine.
-  return send_mail(form_data['email'], CONTACT_TO, subject, message)
+  return send_mail(CONTACT['from'], CONTACT['to'], subject, message)
 
 # Store contact on the off-chance that something goes awry with the e-mail
 # sending process.
