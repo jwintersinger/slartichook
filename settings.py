@@ -1,4 +1,4 @@
-# Django settings for slartibartfast project.
+# Django settings for slartichook project.
 
 import os
 
@@ -6,7 +6,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('Jeff', 'jeff.slartibartfast@micand.com'),
+    ('Jeff', 'jeff.slartichook@micand.com'),
 )
 CONTACT_TO = 'jeff@micand.com'
 
