@@ -1,5 +1,6 @@
 from django.views.generic.simple import direct_to_template
-from google.appengine.api.mail import send_mail
+from google.appengine.api import mail
+from google.appengine.ext import db
 from miscellany.utils import render_email
 from settings import CONTACT
 from contact.forms import ContactForm
@@ -12,11 +13,10 @@ def contact(request):
 
   if contact_form.is_valid():
     form_data = contact_form.cleaned_data
-    _send_contact_email(form_data)
-    _store_contact(form_data)
-    return direct_to_template(request, 'contact/_success.html')
+    if _send_contact_email(form_data) and _store_contact(form_data):
+      return direct_to_template(request, 'contact/_success.html')
   return direct_to_template(request, 'contact/_form.html',
-    {'contact_form': contact_form})
+    {'contact_form': contact_form, 'error_occurred': True})
 
 def _send_contact_email(form_data):
   subject, message = render_email(
@@ -31,7 +31,11 @@ def _send_contact_email(form_data):
   # Django 1.2 throws a variety of exceptions, as appengine_django hasn't
   # been properly updated for Django 1.2's mail code. Thus, I must use the
   # native mail API built into App Engine.
-  return send_mail(CONTACT['from'], CONTACT['to'], subject, message)
+  try:
+    mail.send_mail(CONTACT['from'], CONTACT['to'], subject, message)
+    return True
+  except mail.Error:
+    return False
 
 # Store contact on the off-chance that something goes awry with the e-mail
 # sending process.
@@ -41,4 +45,8 @@ def _store_contact(form_data):
     email   = form_data['email'],
     message = form_data['message']
   )
-  return missive.put()
+  try:
+    missive.put()
+    return True
+  except db.Error:
+    return False

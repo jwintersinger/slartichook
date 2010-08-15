@@ -1,4 +1,8 @@
 <form method="post" action="{% url contact.views.contact %}">
+{% if error_occurred %}
+  <p class="overall_error">Oh, dear, something is amiss.</p>
+{% endif %}
+
   <div class="field">
     <div class="label_and_error">
       <label for="id_name">Your name:</label>
