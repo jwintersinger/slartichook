@@ -4,6 +4,7 @@ Slartichook
   Languages: Python, Javascript
   Technologies: Django, jQuery, Google App Engine
   My Roles: Backend, front-end Javascript, markup, CSS
+  Show Me: View the live site : http://slashdot.org, View the source code : http://github.com
   Images: map.png, map.png, map.png, map.png
 
   In developing my portfolio, I sought to present considerable information

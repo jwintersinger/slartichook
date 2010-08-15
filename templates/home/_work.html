@@ -60,13 +60,16 @@
                 </div>
               {% endif %}
 
+              {% if project.tidbits.show_me %}
                 <div class="project_tidbit show_me">
                   <h3>Show Me</h3>
                   <ul>
-                    <li><a href="#">View the live site</a></li>
-                    <li><a href="#">View the source code</a></li>
+                  {% for show_me in project.tidbits.show_me %}
+                    <li><a href="{{ show_me.url }}">{{ show_me.label }}</a></li>
+                  {% endfor %}
                   </ul>
                 </div>
+              {% endif %}
               </div>
             </div>
           {% endfor %}

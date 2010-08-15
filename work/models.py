@@ -58,7 +58,18 @@ class ProjectParser:
       name, values = line.split(':', 1)
       name = self._format_id(name)
       tidbits[name] = [value.strip() for value in values.split(',')]
+    if 'show_me' in tidbits:
+      tidbits['show_me'] = self._parse_show_me_tidbits(tidbits['show_me'])
     return tidbits
+
+  def _parse_show_me_tidbits(self, show_me_tidbits):
+    for i in range(len(show_me_tidbits)):
+      label, url = show_me_tidbits[i].split(':', 1)
+      show_me_tidbits[i] = {
+        'label': label.strip(),
+        'url':   url.strip(),
+      }
+    return show_me_tidbits
 
   def _format_id(self, label):
     return label.lower().replace(' ', '_').strip()
