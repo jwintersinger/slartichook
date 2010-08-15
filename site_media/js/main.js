@@ -166,6 +166,9 @@ ImagePreloader.prototype._establish_preloaded = function() {
       self._to_preload.push('design/arrow_' + direction + '_' + state + '.png');
     });
   });
+  // dot_{active,inactive}.png will be loaded already because they appear
+  // within design's initial state.
+  self._to_preload.push('design/dot_hover.png');
 }
 
 ImagePreloader.prototype._preload = function() {
