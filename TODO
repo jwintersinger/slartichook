@@ -1,5 +1,4 @@
-Implement uniqueness constraint for blog post slug.
-Fix contact textarea error message not disappearing when form submitted
+Add Google Analytics
 
 Design:
   Extend "about" vertical border
