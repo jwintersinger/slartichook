@@ -22,12 +22,17 @@ $(document).ready(function() {
   // li' fixes this.
   new TextInflater('#navigation li', 1.15);
 
-  // If dispatch_router() runs at time of Ready event, browser is often still
-  // laying out page, and thus my code calculates an invalid position,
-  // resulting in scrolling past the intended content. Running only when the
-  // Load event occurs seems to fix this, for the browser should have
-  // calculated the proper layout by then.
-  window.onload = function() { misc.dispatch_router(); };
+  window.onload = function() {
+    // If dispatch_router() runs at time of Ready event, browser is often still
+    // laying out page, and thus my code calculates an invalid position,
+    // resulting in scrolling past the intended content. Running only when the
+    // Load event occurs seems to fix this, for the browser should have
+    // calculated the proper layout by then.
+    misc.dispatch_router();
+
+    // Don't preload images when Ready event fires, as images needed to display page should have priority.
+    new ImagePreloader();
+  };
 });
 
 
@@ -137,10 +142,39 @@ Miscellany.prototype._configure_guide_toggler = function() {
 }
 
 
+
+/*==============
+  ImagePreloader
+  ==============*/
+function ImagePreloader() {
+  this._establish_preloaded();
+  this._preload();
+}
+
+ImagePreloader.prototype._establish_preloaded = function() {
+  this._to_preload = [];
+
+  var self = this;
+  $.each(['left', 'right'], function(i, direction) {
+    $.each(['active', 'disabled', 'hover'], function(j, state) {
+      self._to_preload.push('design/arrow_' + direction + '_' + state + '.png');
+    });
+  });
+}
+
+ImagePreloader.prototype._preload = function() {
+  $.each(this._to_preload, function(i, src) {
+    src = '/site_media/images/' + src;
+    $('<img/>').attr('src', src);
+  });
+}
+
+
+
 /*==================
   HorizontalScroller
   ==================*/
-HorizontalScroller = function(trigger_sel, panel_sel, panels_container_sel, on_trigger) {
+function HorizontalScroller(trigger_sel, panel_sel, panels_container_sel, on_trigger) {
   this._create(trigger_sel, panel_sel, panels_container_sel, on_trigger);
 }
 
