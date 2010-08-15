@@ -131,6 +131,10 @@ Miscellany.prototype._pad_bottom = function(elem) {
     // Last section is footer, so get section before that.
     var last_content_section = $('.section.last').prev('.section');
     var new_padding = -diff + parseInt(last_content_section.css('paddingBottom'), 10);
+    // I initially would restore the paddingBottom to its original value if the
+    // padding was not visible, such as when scrolling to a section near the
+    // top ("About") after scrolling to one near the bottom ("Contact"), but
+    // this would cause the bottom of the page to "jump" up unpleasantly.
     last_content_section.css('paddingBottom', new_padding);
   }
 }
