@@ -423,6 +423,15 @@ function TextInflater(elements, factor) {
     //
     // Note that fontSize may not be an integer, and so must be stored as a
     // float.
+    //
+    // BUG: at least, a potential bug. Sometimes, element.data('undefined_key')
+    // returns undefined, while sometimes it returns null. Supposedly it was
+    // changed from undefined to null with jQuery 1.4.2 (or perhaps an earlier
+    // 1.4 version), but I still see "undefined" here, while I saw "null" in a
+    // different (now-removed) use of data() elsewhere in this same code base.
+    // If this behaviour is changed in a future jQuery version, the if
+    // statement below may never be triggered, and will thus introduce a bug
+    // into this code.
     if(element.data('base_font_size') === undefined) {
       element.data('base_font_size', parseFloat(element.css('fontSize')));
     }
