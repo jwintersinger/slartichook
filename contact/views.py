@@ -14,9 +14,14 @@ def contact(request):
   if contact_form.is_valid():
     form_data = contact_form.cleaned_data
     if _send_contact_email(form_data) and _store_contact(form_data):
-      return direct_to_template(request, 'contact/_success.html')
-  return direct_to_template(request, 'contact/_form.html',
-    {'contact_form': contact_form, 'error_occurred': True})
+      return direct_to_template(request, 'contact/_success.html', {
+        'name':  form_data['name'],
+        'email': form_data['email']
+      })
+  return direct_to_template(request, 'contact/_form.html', {
+    'contact_form': contact_form,
+    'error_occurred': True
+  })
 
 def _send_contact_email(form_data):
   subject, message = render_email(
