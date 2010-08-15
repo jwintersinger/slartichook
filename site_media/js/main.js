@@ -46,7 +46,7 @@ function Miscellany() {
 
 Miscellany.prototype._configure_miscellany = function() {
   this._clone_content('.about_tidbit', 3);
-  this._configure_guide_toggler();
+  //this._configure_guide_toggler();
 
   var router = this._configure_router();
   this._configure_smooth_scroller(router);
@@ -141,6 +141,8 @@ Miscellany.prototype._pad_bottom = function(elem) {
 
 Miscellany.prototype._configure_guide_toggler = function() {
   $(document).keydown(function(event) {
+      // Note that this will be triggered whenever the user hits 'g', even when
+      // typing in a textarea.
       if(event.keyCode === 71) $('#guide').toggle();
   });
 }
