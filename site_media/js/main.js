@@ -22,7 +22,12 @@ $(document).ready(function() {
   // li' fixes this.
   new TextInflater('#navigation li', 1.15);
 
-  misc.dispatch_router();
+  // If dispatch_router() runs at time of Ready event, browser is often still
+  // laying out page, and thus my code calculates an invalid position,
+  // resulting in scrolling past the intended content. Running only when the
+  // Load event occurs seems to fix this, for the browser should have
+  // calculated the proper layout by then.
+  window.onload = function() { misc.dispatch_router(); };
 });
 
 
