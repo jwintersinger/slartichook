@@ -519,7 +519,6 @@ em           { font-style: italic; }
 #contact_form .status {
   float: left;
   margin-top: 6px;
-  margin-left: 10px;
   border-radius: 4px;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -527,6 +526,10 @@ em           { font-style: italic; }
 
   background-color: #909090;
 }
+
+/* Assign margin separately here so it doesn't apply to .status indicating
+ * error messages for message textarea. */
+#contact_form .label_and_error .status { margin-left: 10px; }
 
 
 
