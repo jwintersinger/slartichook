@@ -548,7 +548,7 @@ function ContactForm() {
 }
 
 ContactForm.prototype._disappear = function(form, on_complete) {
-  var visible_elements = form.find('.label_and_error, input, textarea').toArray();
+  var visible_elements = form.find('.label_and_error, .message_field, input').toArray();
   // Sort randomly.
   visible_elements.sort(function(a, b) {
     return Math.random() - 0.5;
