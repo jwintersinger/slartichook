@@ -45,7 +45,6 @@ function Miscellany() {
 }
 
 Miscellany.prototype._configure_miscellany = function() {
-  this._clone_content('.about_tidbit', 3);
   //this._configure_guide_toggler();
 
   var router = this._configure_router();
@@ -75,6 +74,7 @@ Miscellany.prototype._configure_router = function() {
   });
 }
 
+// Useful for duplicating sections in development. Not used in production.
 Miscellany.prototype._clone_content = function(to_clone, times) {
   to_clone = $(to_clone);
   for(var i = 0; i < times; i++)

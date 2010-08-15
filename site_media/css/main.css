@@ -52,6 +52,9 @@ a {
 a:hover      { color: #427bda;     }
 p            { margin-bottom: 1em; }
 p:last-child { margin-bottom: 0;   }
+/* I don't know precisely why this is needed, but otherwise <em> element
+ * contents are not italicized. */
+em           { font-style: italic; }
 
 
 
