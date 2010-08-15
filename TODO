@@ -2,7 +2,6 @@ Implement uniqueness constraint for blog post slug.
 Concerns over scroll position of projects when page reloaded after being manually scrolled
 Fix contact textarea error message not disappearing when form submitted
 
-Work scroll
 Work -- disable image switcher buttons
 Enable "Show me" links
 

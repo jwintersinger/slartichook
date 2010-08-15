@@ -4,7 +4,7 @@ Slartichook
   Languages: Python, Javascript
   Technologies: Django, jQuery, Google App Engine
   My Roles: Backend, front-end Javascript, markup, CSS
-  Images: map.png
+  Images: map.png, map.png, map.png, map.png
 
   In developing my portfolio, I sought to present considerable information
   without compromising usability. Stymied by my own graphic design ineptitude,

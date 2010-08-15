@@ -528,9 +528,12 @@ ProjectImageSwitcher.prototype._configure_controls_display = function() {
   var active_project_images = $('.project_detail.active .project_images');
   var animation_duration = 250;
 
+  var self = this;
   // Use 'live' events since active project changes over time.
   active_project_images.find('img').live('mouseenter', function() {
-    $(this).parents('.project_images').find('.project_image_controls').slideDown(animation_duration);
+    var active_image = $(this);
+    var controls = self._manipulate_controls(active_image);
+    controls.slideDown(animation_duration);
   });
 
   active_project_images.live('mouseleave', function() {
@@ -538,15 +541,34 @@ ProjectImageSwitcher.prototype._configure_controls_display = function() {
   });
 }
 
-ProjectImageSwitcher.prototype._configure_controls_action = function() {
-  $('.project_image_controls .prev, .project_image_controls .next').click(function() {
-    var container        = $(this).parents('.project_images');
-    var image_container  = container.find('.image_container');
+ProjectImageSwitcher.prototype._manipulate_controls = function(active_image) {
+  var controls = active_image.parents('.project_images').find('.project_image_controls');
 
-    var prev_active = image_container.find('.active');
+  $.each(['prev', 'next'], function(i, type) {
+    var control = controls.find('.' + type);
+    if(active_image[type]('img').length === 0) {
+      control.addClass('disabled');
+    } else {
+      control.removeClass('disabled');
+    }
+  });
+
+  return controls;
+}
+
+ProjectImageSwitcher.prototype._configure_controls_action = function() {
+  var self = this;
+  $('.project_image_controls .prev, .project_image_controls .next').click(function() {
+    var control = $(this);
+    if(control.hasClass('disabled'))
+      return;
+
+    var container       = control.parents('.project_images');
+    var image_container = container.find('.image_container');
+    var prev_active     = image_container.find('.active');
     prev_active.removeClass('active')
 
-    if($(this).hasClass('next')) {
+    if(control.hasClass('next')) {
       var new_active = prev_active.next();
       var default_pos = 'first';
     } else {
@@ -558,6 +580,8 @@ ProjectImageSwitcher.prototype._configure_controls_action = function() {
       new_active = image_container.find('img:' + default_pos);
 
     new_active.addClass('active');
+    self._manipulate_controls(new_active);
+
     image_container.animate({ marginLeft: -new_active.position().left }, { duration: 300 });
   });
 }
