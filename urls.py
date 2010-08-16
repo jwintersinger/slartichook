@@ -17,4 +17,7 @@ urlpatterns = patterns('',
     url(r'^blog/',    include('blog.urls')),
     url(r'^contact/', include('contact.urls')),
     url(r'^$',        include('home.urls')),
+    # For some reason, placing the equivalent line in home/urls.py results in
+    # the route never being matched, so I place it here instead.
+    url(r'^clear/$',  'home.views.clear_cache'),
 )
