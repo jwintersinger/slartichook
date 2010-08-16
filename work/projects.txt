@@ -4,7 +4,7 @@ Slartichook
   Languages: Python, Javascript
   Technologies: Django, jQuery, Google App Engine
   My Roles: Backend, front-end Javascript, markup, CSS
-  Show Me: View the source code : http://github.com/jwintersinger/slartichook
+  Show Me: View the source code: http://github.com/jwintersinger/slartichook
   Images: map.png, map.png, map.png, map.png
 
   In developing my portfolio, I sought to present considerable information
@@ -28,7 +28,7 @@ Alexswan
   Languages: Python, Javascript
   Technologies: Django, jQuery
   My Roles: Backend, front-end Javascript
-  Show Me: View the live site : http://alexswanson.net
+  Show Me: View the live site: http://alexswanson.net
 
   I wrote the backend for my graphic designer friend [Alex
   Swanson](http://alexswanson.net)'s portfolio, encompassing a blog, work
@@ -81,7 +81,7 @@ Twitinerary
   Languages: Python, Javascript
   Technologies: Google App Engine, Django, jQuery, jQuery UI
   My Roles: Backend, front-end
-  Show Me: View the live site : http://twitinerary.appspot.com, View the source code: http://github.com/jwintersinger/twitinerary
+  Show Me: View the live site: http://twitinerary.appspot.com, View the source code: http://github.com/jwintersinger/twitinerary
 
   Twitinerary is a tweet scheduler built on Google App Engine and Django, which
   I created in collaboration with my designer friend [Alex
