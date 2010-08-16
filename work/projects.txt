@@ -4,7 +4,7 @@ Slartichook
   Languages: Python, Javascript
   Technologies: Django, jQuery, Google App Engine
   My Roles: Backend, front-end Javascript, markup, CSS
-  Show Me: View the live site : http://slashdot.org, View the source code : http://github.com
+  Show Me: View the source code : http://github.com/jwintersinger/slartichook
   Images: map.png, map.png, map.png, map.png
 
   In developing my portfolio, I sought to present considerable information
@@ -45,7 +45,7 @@ Gee Pee
 
   Languages: Javascript
   Techonlogies: HTML5 Web Workers, HTML5 Canvas
-  Show Me: View the source code: http://github.com/jwintersinger/geepee
+  Show Me: View the source code: http://github.com/jwintersinger/geepee, View the live project: http://static.jeff.wintersinger.com/geepee/
 
   Gee Pee is a ruidimentary genetic programming system that strives to produce
   a mathematical expression approximating the trigonometric function
@@ -65,7 +65,7 @@ Towers of Hanoi
 
   Languages: Javascript
   Technologies: HTML5 Canvas
-  Show Me: View the source code: http://github.com/jwintersinger/towers-of-hanoi
+  Show Me: View the source code: http://github.com/jwintersinger/towers-of-hanoi, View the live project: http://static.jeff.wintersinger.com/towers-of-hanoi/
 
   Towers of Hanoi is an implementation of the classic Towers of Hanoi puzzle
   using HTML5 Canvas.  Given the ability to play with a user-specified number
