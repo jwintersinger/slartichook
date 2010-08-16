@@ -28,6 +28,7 @@ Alexswan
   Languages: Python, Javascript
   Technologies: Django, jQuery
   My Roles: Backend, front-end Javascript
+  Show Me: View the live site : http://alexswanson.net
 
   I wrote the backend for my graphic designer friend [Alex
   Swanson](http://alexswanson.net)'s portfolio, encompassing a blog, work
@@ -44,6 +45,7 @@ Gee Pee
 
   Languages: Javascript
   Techonlogies: HTML5 Web Workers, HTML5 Canvas
+  Show Me: View the source code: http://github.com/jwintersinger/geepee
 
   Gee Pee is a ruidimentary genetic programming system that strives to produce
   a mathematical expression approximating the trigonometric function
@@ -63,6 +65,7 @@ Towers of Hanoi
 
   Languages: Javascript
   Technologies: HTML5 Canvas
+  Show Me: View the source code: http://github.com/jwintersinger/towers-of-hanoi
 
   Towers of Hanoi is an implementation of the classic Towers of Hanoi puzzle
   using HTML5 Canvas.  Given the ability to play with a user-specified number
@@ -78,6 +81,7 @@ Twitinerary
   Languages: Python, Javascript
   Technologies: Google App Engine, Django, jQuery, jQuery UI
   My Roles: Backend, front-end
+  Show Me: View the live site : http://twitinerary.appspot.com, View the source code: http://github.com/jwintersinger/twitinerary
 
   Twitinerary is a tweet scheduler built on Google App Engine and Django, which
   I created in collaboration with my designer friend [Alex
@@ -105,6 +109,7 @@ Ts3Query
 
   Languages: Python, Javascript
   Technologies: web.py, jQuery
+  Show Me: View the source code: http://github.com/jwintersinger/ts3query
 
   Ts3Query is a webapp that lists users connected to a server for the VOIP
   application [TeamSpeak 3](http://teamspeak.com/). Developed to scratch my own
@@ -118,6 +123,7 @@ Capribup
   A backup script.
 
   Languages: Ruby
+  Show Me: View the source code: http://github.com/jwintersinger/capribup
 
   Capribup is a backup script capable of archiving directory trees or
   PostgreSQL databases. Intended to be run periodically as a cronjob, Capribup
@@ -140,6 +146,7 @@ Shoutcast Recorder
   A streaming audio recorder.
 
   Languages: Ruby
+  Show Me: View the source code: http://github.com/jwintersinger/shoutcast-recorder
 
   Shoutcast Recorder is a command-line Ruby application that allows one to
   record audio streamed from Shoutcast servers, based on a finite state
@@ -153,6 +160,7 @@ Cathy Parser
   A querier for file index records.
 
   Languages: Python
+  Show Me: View the source code: http://github.com/jwintersinger/cathy-parser
 
   Cathy Parser queries the records produced by [Cathy](http://www.mtg.sk/rva/),
   a file-indexing application helpful in cataloguing files stored on removeable
@@ -167,6 +175,7 @@ Computing Systems Exercises
   Solutions for computer-building book.
 
   Languages: Python, book-specific hardware description language
+  Show Me: View the source code: http://github.com/jwintersinger/the-elements-of-computing-systems
 
   [_The Elements of Computing Systems_](http://www1.idc.ac.il/tecs/) is a book
   that has the reader build a computer architecture in software, starting with
