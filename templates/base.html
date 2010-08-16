@@ -7,6 +7,9 @@
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script type="text/javascript" src="{{ MEDIA_URL }}js/main.js"></script>
+  {% if not debug %}
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/google_analytics.js"></script>
+  {% endif %}
 
     <!--<link rel="stylesheet" href="{{ MEDIA_URL }}css/blueprint/screen.css" type="text/css" media="screen, projection" />
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/blueprint/print.css" type="text/css" media="print" />-->
