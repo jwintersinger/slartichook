@@ -578,19 +578,26 @@ function ProjectImageSwitcher() {
 }
 
 ProjectImageSwitcher.prototype._configure_controls_display = function() {
-  var active_project_images = $('.project_detail.active .project_images');
+  var active_project_image_container = $('.project_detail.active .project_images');
+  var active_project_images = active_project_image_container.find('img');
   var animation_duration = 250;
 
   var self = this;
   // Use 'live' events since active project changes over time.
-  active_project_images.find('img').live('mouseenter', function() {
+  active_project_images.live('mouseenter', function() {
     var active_image = $(this);
     var controls = self._manipulate_controls(active_image);
     controls.slideDown(animation_duration);
   });
 
-  active_project_images.live('mouseleave', function() {
+  active_project_image_container.live('mouseleave', function() {
     $(this).find('.project_image_controls').slideUp(animation_duration);
+  });
+
+  // When user clicks on image, advance to next image.
+  active_project_images.live('click', function() {
+    var controls = $(this).parents('.project_images').find('.project_image_controls');
+    controls.find('.next').click();
   });
 }
 
@@ -601,8 +608,10 @@ ProjectImageSwitcher.prototype._manipulate_controls = function(active_image) {
     var control = controls.find('.' + type);
     if(active_image[type]('img').length === 0) {
       control.addClass('disabled');
+      if(type == 'next') active_image.css('cursor', 'auto');
     } else {
       control.removeClass('disabled');
+      if(type == 'next') active_image.css('cursor', 'pointer');
     }
   });
 
