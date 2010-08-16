@@ -1,0 +1,13 @@
+ADMINS = (
+  ('Jeff', 'jeff@example.org'),
+)
+
+CONTACT = {
+  'to':   'contact@example.org',
+  # Must be registered admin of application. See
+  # http://code.google.com/appengine/docs/python/mail/sendingmail.html.
+  'from': 'admin@example.org',
+}
+
+# Make this unique, and don't share it with anybody.
+SECRET_KEY = 'If I had a secret, I would whisper it in your ear.'

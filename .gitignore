@@ -7,6 +7,7 @@ django
 django.zip
 markdown
 markdown.zip
+settings_deployment.py
 site_media/css/blueprint/
 site_media/images/design/mockup.png
 site_media/images/design/guide.png
