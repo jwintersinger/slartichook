@@ -384,7 +384,7 @@ em           { font-style: italic; }
 .project_image_controls   .next.disabled { background-image: url('../images/design/arrow_right_disabled.png');   }
 
 .project_images .image_viewport,
-  .project_description .project_image_controls         { width: 239px;                                       }
+  .project_description .project_image_controls         { width: 270px;                                       }
 .project_images .image_viewport                        { overflow: hidden;                                   }
 
 .project_images .image_container {

@@ -1,5 +1,8 @@
+# Temporary files.
 *.pyc
 .*.swp
+
+# Project dependencies.
 .google_appengine
 appengine_django
 appengine_django.zip
@@ -7,7 +10,12 @@ django
 django.zip
 markdown
 markdown.zip
-settings_deployment.py
+
+# Blueprint.
 site_media/css/blueprint/
 site_media/images/design/mockup.png
 site_media/images/design/guide.png
+
+# Project files.
+site_media/images/projects
+settings_deployment.py

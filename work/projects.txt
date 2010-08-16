@@ -5,7 +5,6 @@ Slartichook
   Technologies: Django, jQuery, Google App Engine
   My Roles: Backend, front-end Javascript, markup, CSS
   Show Me: View the source code: http://github.com/jwintersinger/slartichook
-  Images: map.png, map.png, map.png, map.png
 
   In developing my portfolio, I sought to present considerable information
   without compromising usability. Stymied by my own graphic design ineptitude,
@@ -29,6 +28,7 @@ Alexswan
   Technologies: Django, jQuery
   My Roles: Backend, front-end Javascript
   Show Me: View the live site: http://alexswanson.net
+  Images: blog.png, blog_admin.png, work.png, contact.png
 
   I wrote the backend for my graphic designer friend [Alex
   Swanson](http://alexswanson.net)'s portfolio, encompassing a blog, work
@@ -46,6 +46,7 @@ Gee Pee
   Languages: Javascript
   Techonlogies: HTML5 Web Workers, HTML5 Canvas
   Show Me: View the source code: http://github.com/jwintersinger/geepee, View the live project: http://static.jeff.wintersinger.com/geepee/
+  Images: main.png
 
   Gee Pee is a ruidimentary genetic programming system that strives to produce
   a mathematical expression approximating the trigonometric function
@@ -66,6 +67,7 @@ Towers of Hanoi
   Languages: Javascript
   Technologies: HTML5 Canvas
   Show Me: View the source code: http://github.com/jwintersinger/towers-of-hanoi, View the live project: http://static.jeff.wintersinger.com/towers-of-hanoi/
+  Images: intro.png, game.png
 
   Towers of Hanoi is an implementation of the classic Towers of Hanoi puzzle
   using HTML5 Canvas.  Given the ability to play with a user-specified number
@@ -82,6 +84,7 @@ Twitinerary
   Technologies: Google App Engine, Django, jQuery, jQuery UI
   My Roles: Backend, front-end
   Show Me: View the live site: http://twitinerary.appspot.com, View the source code: http://github.com/jwintersinger/twitinerary
+  Images: schedule_tweet.png, view_tweets.png
 
   Twitinerary is a tweet scheduler built on Google App Engine and Django, which
   I created in collaboration with my designer friend [Alex
@@ -110,6 +113,7 @@ Ts3Query
   Languages: Python, Javascript
   Technologies: web.py, jQuery
   Show Me: View the source code: http://github.com/jwintersinger/ts3query
+  Images: main.png
 
   Ts3Query is a webapp that lists users connected to a server for the VOIP
   application [TeamSpeak 3](http://teamspeak.com/). Developed to scratch my own
