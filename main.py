@@ -25,6 +25,9 @@ import os
 import sys
 import logging
 
+sys.path.insert(1, 'markdown.zip')
+sys.path.insert(1, 'appengine_django.zip')
+
 from appengine_django import InstallAppengineHelperForDjango
 InstallAppengineHelperForDjango()
 

@@ -2,9 +2,11 @@
 .*.swp
 .google_appengine
 appengine_django
+appengine_django.zip
 django
 django.zip
 markdown
+markdown.zip
 site_media/css/blueprint/
 site_media/images/design/mockup.png
 site_media/images/design/guide.png
