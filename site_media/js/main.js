@@ -37,6 +37,15 @@ $(document).ready(function() {
 
 
 
+/*======
+  Config
+  ======*/
+var Config = {
+  project_panel_animation_duration: 900
+};
+
+
+
 /*==========
   Miscellany
   ==========*/
@@ -212,7 +221,7 @@ HorizontalScroller.prototype._create = function(trigger_sel, panel_sel, panels_c
     panels.removeClass('active');
     selected_panel.addClass('active');
     var offset = -(selected_panel.position().left - panels.eq(0).position().left);
-    panels_container.animate({ marginLeft: offset }, { duration: 900 });
+    panels_container.animate({ marginLeft: offset }, Config.project_panel_animation_duration);
   });
 }
 
@@ -234,14 +243,9 @@ function ProjectSwitcher(misc) {
 }
 
 ProjectSwitcher.prototype.collapse_height = function(active_panel) {
-  $('#work_content').css({
-    height: max($('#project_list').outerHeight(true),
-                $(active_panel).outerHeight(true))
-  });
-}
-
-function max(a, b) {
-  return (a > b) ? a : b;
+  $('#project_detail_viewport').animate({
+    height: $(active_panel).outerHeight(true)
+  }, Config.project_panel_animation_duration);
 }
 
 
@@ -295,7 +299,7 @@ AboutTidbitSwitcher.prototype._halt_auto_switcher = function() {
 function BorderAnimator(triggers, activated_trigger) {
   this._old_selected = triggers.filter('.active');
   this._new_selected = activated_trigger;
-  this._animation_duration = 450;
+  this._animation_duration = Config.project_panel_animation_duration / 2;
 }
 
 BorderAnimator.prototype.animate = function() {
