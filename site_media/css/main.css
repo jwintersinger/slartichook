@@ -113,13 +113,13 @@ em           { font-style: italic; }
 
 #project_detail_viewport {
   position: relative;
-  left: 333px;
-  width: 649px;
+  left: 335px;
+  width: 647px;
 }
 
 #project_list {
   position: relative;
-  left: 323px;
+  left: 325px;
   /* Shift down 1px so that last project in list aligns with border on bottom
    * of work section. */
   top: 1px;
@@ -145,12 +145,12 @@ em           { font-style: italic; }
 
 #work_right_border {
   position: relative;
-  left: -301px;
+  left: -303px;
 }
 
 #work .hor_border.right {
   position: relative;
-  left: -300px;
+  left: -302px;
 }
 
 #about_tidbits { top: -5px; }
