@@ -70,7 +70,7 @@ Towers of Hanoi
   Images: intro.png, game.png
 
   Towers of Hanoi is an implementation of the classic Towers of Hanoi puzzle
-  using HTML5 Canvas.  Given the ability to play with a user-specified number
+  using HTML5 Canvas. Given the ability to play with a user-specified number
   of disks, the user quickly gains an appreciation for how the number of steps
   required to reach a solution grows exponentially with the number of disks. As
   my first project exploiting Canvas, it opened my eyes to the possibilities
@@ -88,12 +88,8 @@ Twitinerary
 
   Twitinerary is a tweet scheduler built on Google App Engine and Django, which
   I created in collaboration with my designer friend [Alex
-  Swanson](http://alexswanson.net/). Based on his desire for a simple but
-  graceful tweet scheduler, I wrote a rough prototype as a means of learning
-  App Engine, then gradually fleshed it out based on brainstorming sessions
-  with Alex. Though we planned to integrate a user interface created by Alex
-  and deploy the app to the masses, we abandoned Twitinerary for other projects
-  before reaching completion.
+  Swanson](http://alexswanson.net/). Sadly, we abandoned our plans to integrate
+  Alex's design and deploy the app to the masses.
 
   My focus throughout the project was on building a rich user interface using
   jQuery UI, eliminating transitions between pages. Noteworthy is Twitinerary's
