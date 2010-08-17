@@ -1,10 +1,8 @@
 # Django settings for slartichook project.
 import os
-
-DEBUG = os.environ['SERVER_SOFTWARE'].lower().startswith('dev')
-TEMPLATE_DEBUG = DEBUG
-
 from settings_deployment import *
+
+TEMPLATE_DEBUG = DEBUG
 
 MANAGERS = ADMINS
 
@@ -75,6 +73,7 @@ MIDDLEWARE_CLASSES = (
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
     'django.core.context_processors.debug',
+    'miscellany.context_processors.google_analytics',
     #'django.core.context_processors.i18n',
 )
 

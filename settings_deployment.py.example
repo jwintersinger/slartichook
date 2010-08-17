@@ -1,3 +1,13 @@
+import os
+
+# This setting ought to be in settings.py, as the user ought not to need to
+# change its value, but we require its value to determine whether to set
+# GOOGLE_ANALYTICS_ACCOUNT, which definitely belongs in this file.
+DEBUG = os.environ['SERVER_SOFTWARE'].lower().startswith('dev')
+
+if not DEBUG:
+  GOOGLE_ANALYTICS_ACCOUNT = 'UA-99999999-9'
+
 ADMINS = (
   ('Jeff', 'jeff@example.org'),
 )
