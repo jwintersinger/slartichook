@@ -220,14 +220,24 @@ HorizontalScroller.prototype._create = function(trigger_sel, panel_sel, panels_c
   ProjectSwitcher
   ===============*/
 function ProjectSwitcher(misc) {
+  var self = this;
   new HorizontalScroller('#project_list .project', '.project_detail', '#projects_detail_container',
     function(args) {
+      var border_animator = new BorderAnimator(args.triggers, args.activated_trigger);
+      if(!border_animator.animate())
+        return false;
+
       window.location.hash = '/work/' + args.activated_trigger.attr('id').replace('_trigger', '');
-      var project_list_height = $('#project_list').outerHeight(true);
-      var selected_panel_height = $(args.selected_panel).outerHeight(true);
-      $('#work_content').css({ height: max($('#project_list').outerHeight(true), $(args.selected_panel).outerHeight(true)) });
-      return (new BorderAnimator(args.triggers, args.activated_trigger)).animate();
+      self.collapse_height(args.selected_panel);
+      return true;
     });
+}
+
+ProjectSwitcher.prototype.collapse_height = function(active_panel) {
+  $('#work_content').css({
+    height: max($('#project_list').outerHeight(true),
+                $(active_panel).outerHeight(true))
+  });
 }
 
 function max(a, b) {
