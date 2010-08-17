@@ -1,10 +1,10 @@
 Prevent invisible project images from loading when page loads
 Push Slartichook to Github
 Namespace JS
+Prevent caching when DEBUG = True
 
 Design:
   Extend "about" vertical border
-    Fix alignment between vertical borders in About, Work, Contact
   Blog section
   Ensure header is right-aligned
   Text shadows on headers
