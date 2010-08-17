@@ -16,9 +16,7 @@
   z-index: -9999;
 }
 
-* {
-  z-index: 0;
-}
+* { z-index: 0; }
 
 
 
@@ -326,7 +324,7 @@ em           { font-style: italic; }
 /*-------
   Borders
   -------*/
-#work_left_border  { border-left: 1px solid #cbcbcb;  }
+#work_left_border  { border-left:  1px solid #cbcbcb; }
 #work_right_border { border-right: 1px solid #cbcbcb; }
 
 #work .hor_border {
@@ -379,16 +377,16 @@ em           { font-style: italic; }
   cursor: pointer;
 }
 
-.project_image_controls   .prev          { background-image: url('../images/design/arrow_left_active.png');  }
-.project_image_controls   .next          { background-image: url('../images/design/arrow_right_active.png'); }
-.project_image_controls   .prev:hover    { background-image: url('../images/design/arrow_left_hover.png');   }
-.project_image_controls   .next:hover    { background-image: url('../images/design/arrow_right_hover.png');   }
-.project_image_controls   .prev.disabled { background-image: url('../images/design/arrow_left_disabled.png');   }
-.project_image_controls   .next.disabled { background-image: url('../images/design/arrow_right_disabled.png');   }
+.project_image_controls   .prev          { background-image: url('../images/design/arrow_left_active.png');    }
+.project_image_controls   .next          { background-image: url('../images/design/arrow_right_active.png');   }
+.project_image_controls   .prev:hover    { background-image: url('../images/design/arrow_left_hover.png');     }
+.project_image_controls   .next:hover    { background-image: url('../images/design/arrow_right_hover.png');    }
+.project_image_controls   .prev.disabled { background-image: url('../images/design/arrow_left_disabled.png');  }
+.project_image_controls   .next.disabled { background-image: url('../images/design/arrow_right_disabled.png'); }
 
 .project_images .image_viewport,
-  .project_description .project_image_controls         { width: 270px;                                       }
-.project_images .image_viewport                        { overflow: hidden;                                   }
+  .project_description .project_image_controls { width: 270px;     }
+.project_images .image_viewport                { overflow: hidden; }
 
 .project_images .image_container {
   width: 100000px;
