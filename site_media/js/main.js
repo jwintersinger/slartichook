@@ -11,7 +11,7 @@ $(document).ready(function() {
   var misc = new Miscellany();
 
   new AboutTidbitSwitcher(misc);
-  new ProjectSwitcher(misc);
+  var project_switcher = new ProjectSwitcher(misc);
   new ProjectImageSwitcher();
   new ContactForm();
 
@@ -30,8 +30,13 @@ $(document).ready(function() {
     // calculated the proper layout by then.
     misc.dispatch_router();
 
-    // Don't preload images when Ready event fires, as images needed to display page should have priority.
+    // Don't preload images when Ready event fires, as images needed to display
+    // page should have priority.
     new ImagePreloader();
+
+    // Again, call when Load event occurs to increase probability that browser
+    // has calculated proper sizes of elements.
+    project_switcher.collapse_height('.project_detail.active', 0);
   };
 });
 
@@ -237,15 +242,17 @@ function ProjectSwitcher(misc) {
         return false;
 
       window.location.hash = '/work/' + args.activated_trigger.attr('id').replace('_trigger', '');
-      self.collapse_height(args.selected_panel);
+      self.collapse_height(args.selected_panel, Config.project_panel_animation_duration);
       return true;
     });
 }
 
-ProjectSwitcher.prototype.collapse_height = function(active_panel) {
+// Prevent viewport's dimensinos from expanding to height of tallest project.
+// Instead, set to height of active project.
+ProjectSwitcher.prototype.collapse_height = function(active_panel, duration) {
   $('#project_detail_viewport').animate({
     height: $(active_panel).outerHeight(true)
-  }, Config.project_panel_animation_duration);
+  }, duration);
 }
 
 
