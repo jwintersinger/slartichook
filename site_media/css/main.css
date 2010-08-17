@@ -341,11 +341,14 @@ em           { font-style: italic; }
 /*--------------
   Project detail
   --------------*/
-#project_detail_viewport                   { overflow: hidden;     }
 #projects_detail_container                 { width: 10000px;       }
 #projects_detail_container .project_detail { float: left;          }
 .project_detail > h2                       { margin-bottom: 0.6em; }
 .project_detail .project_images            { margin-bottom: 1.3em; }
+#project_detail_viewport {
+  overflow: hidden;
+  padding-bottom: 32px;
+}
 
 .project_description .project_images img {
   display: block;
