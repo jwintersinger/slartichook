@@ -1,4 +1,6 @@
 Prevent invisible project images from loading when page loads
+Push Slartichook to Github
+Namespace JS
 
 Design:
   Extend "about" vertical border
@@ -6,3 +8,4 @@ Design:
   Blog section
   Ensure header is right-aligned
   Text shadows on headers
+  Place border around project image viewport

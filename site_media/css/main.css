@@ -19,7 +19,6 @@
 * { z-index: 0; }
 
 
-
 /*================
   General elements
   ================*/
@@ -107,15 +106,9 @@ em           { font-style: italic; }
   position: relative;
 }
 
-#about_intro {
+#about_intro, #contact_form, #contact_misc, #about_tidbits {
   position: relative;
   left: 32px;
-}
-
-#about_tidbits {
-  position: relative;
-  left: 42px;
-  top: -5px;
 }
 
 #project_detail_viewport {
@@ -160,15 +153,8 @@ em           { font-style: italic; }
   left: -300px;
 }
 
-#contact_form {
-  position: relative;
-  left: -11px;
-}
-
-#contact_misc {
-  position: relative;
-  top: 3px;
-}
+#about_tidbits { top: -5px; }
+#contact_misc  { top:  3px; }
 
 
 
