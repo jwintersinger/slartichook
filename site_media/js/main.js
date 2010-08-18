@@ -15,13 +15,6 @@ $(document).ready(function() {
   new ProjectImageSwitcher();
   new ContactForm();
 
-  // If '#navigation a' selector is used, then elements shift down two pixels
-  // when their positions are locked. This may be due to the anchors being
-  // converted from inline elements to block-level elements when they are
-  // absolutely positioned. Regardless, changing the selector to '#navigation
-  // li' fixes this.
-  new TextInflater('#navigation li', 1.15);
-
   window.onload = function() {
     // If dispatch_router() runs at time of Ready event, browser is often still
     // laying out page, and thus my code calculates an invalid position,
@@ -33,6 +26,25 @@ $(document).ready(function() {
     // Don't preload images when Ready event fires, as images needed to display
     // page should have priority.
     new ImagePreloader();
+
+    // If '#navigation a' selector is used, then elements shift down two pixels
+    // when their positions are locked. This may be due to the anchors being
+    // converted from inline elements to block-level elements when they are
+    // absolutely positioned. Regardless, changing the selector to '#navigation
+    // li' fixes this.
+    //
+    // Initialization must be done at time of Load event rather than Ready one,
+    // as if a hover event over the navigation elements is fired before the
+    // browser has laid them out at their proper positions, the elements will
+    // be "locked" into place at the wrong location. This bug manifested itself
+    // in Chrome, where on occasion, if one slowly moved his mouse cursor
+    // horizontally over the space 100 to 150 pixels to the right of the logo,
+    // along its baseline, the navigation elements would become locked in a
+    // position where they were laid out vertically, overlaying the circle in
+    // the logo containing "JW, Esq." By only initializing TextInflater after
+    // Load fires, this problem seems to have been fixed in Chrome. (Before
+    // implementing the fix, I couldn't reproduce the problem in Firefox.)
+    new TextInflater('#navigation li', 1.15);
 
     // Again, call when Load event occurs to increase probability that browser
     // has calculated proper sizes of elements.
