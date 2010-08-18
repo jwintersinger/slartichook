@@ -8,12 +8,12 @@
  * like a darned fool. */
 
 $(document).ready(function() {
-  var misc = new Miscellany();
+  var misc = new jwesq.Miscellany();
 
-  new AboutTidbitSwitcher(misc);
-  var project_switcher = new ProjectSwitcher(misc);
-  new ProjectImageSwitcher();
-  new ContactForm();
+  new jwesq.AboutTidbitSwitcher(misc);
+  var project_switcher = new jwesq.ProjectSwitcher(misc);
+  new jwesq.ProjectImageSwitcher();
+  new jwesq.ContactForm();
 
   window.onload = function() {
     // If dispatch_router() runs at time of Ready event, browser is often still
@@ -25,7 +25,7 @@ $(document).ready(function() {
 
     // Don't preload images when Ready event fires, as images needed to display
     // page should have priority.
-    new ImagePreloader();
+    new jwesq.ImagePreloader();
 
     // If '#navigation a' selector is used, then elements shift down two pixels
     // when their positions are locked. This may be due to the anchors being
@@ -44,7 +44,7 @@ $(document).ready(function() {
     // the logo containing "JW, Esq." By only initializing TextInflater after
     // Load fires, this problem seems to have been fixed in Chrome. (Before
     // implementing the fix, I couldn't reproduce the problem in Firefox.)
-    new TextInflater('#navigation li', 1.15);
+    new jwesq.TextInflater('#navigation li', 1.15);
 
     // Again, call when Load event occurs to increase probability that browser
     // has calculated proper sizes of elements.
@@ -54,10 +54,18 @@ $(document).ready(function() {
 
 
 
+/*=====
+  jwesq
+  =====*/
+// I practice proper namespace hygiene! Hooray!
+var jwesq = {};
+
+
+
 /*======
   Config
   ======*/
-var Config = {
+jwesq.Config = {
   project_panel_animation_duration: 900
 };
 
@@ -66,11 +74,11 @@ var Config = {
 /*==========
   Miscellany
   ==========*/
-function Miscellany() {
+jwesq.Miscellany = function() {
   this._configure_miscellany();
 }
 
-Miscellany.prototype._configure_miscellany = function() {
+jwesq.Miscellany.prototype._configure_miscellany = function() {
   //this._configure_guide_toggler();
 
   var router = this._configure_router();
@@ -80,13 +88,13 @@ Miscellany.prototype._configure_miscellany = function() {
 // To scroll to the appropriate project, this function must be called only
 // after the appropriate horizontal scroller is set up, which occurs when
 // ProjectSwitcher is instantiated.
-Miscellany.prototype.dispatch_router = function() {
+jwesq.Miscellany.prototype.dispatch_router = function() {
   this._router.dispatch();
 }
 
 
-Miscellany.prototype._configure_router = function() {
-  this._router = new UrlHashRouter();
+jwesq.Miscellany.prototype._configure_router = function() {
+  this._router = new jwesq.UrlHashRouter();
 
   var self = this;
   this._router.register_route(new RegExp('^/work/(.+)$'), function(match) {
@@ -101,13 +109,13 @@ Miscellany.prototype._configure_router = function() {
 }
 
 // Useful for duplicating sections in development. Not used in production.
-Miscellany.prototype._clone_content = function(to_clone, times) {
+jwesq.Miscellany.prototype._clone_content = function(to_clone, times) {
   to_clone = $(to_clone);
   for(var i = 0; i < times; i++)
     to_clone.clone().appendTo(to_clone.parent());
 }
 
-Miscellany.prototype._configure_smooth_scroller = function(router) {
+jwesq.Miscellany.prototype._configure_smooth_scroller = function(router) {
   var self = this;
   $('a[href*=#]').click(function () {
     // Only intercept links leading to locations on current page.
@@ -125,7 +133,7 @@ Miscellany.prototype._configure_smooth_scroller = function(router) {
   });
 }
 
-Miscellany.prototype._scroll_to = function(elem) {
+jwesq.Miscellany.prototype._scroll_to = function(elem) {
   this._fixed_header_height = $('#header').outerHeight();
 
   var target = $(elem);
@@ -144,7 +152,7 @@ Miscellany.prototype._scroll_to = function(elem) {
 // Dynamically pad bottom of document if necessary, so that when we scroll to
 // element, that element will always appear at top of viewport, even if it is
 // near the document's bottom.
-Miscellany.prototype._pad_bottom = function(elem) {
+jwesq.Miscellany.prototype._pad_bottom = function(elem) {
   // Vertical space from top of elem to bottom of document.
   var vertical_space = $(document).height() - $(elem).offset().top;
   // Height of viewport for content, which excludes our fixed-position header.
@@ -165,7 +173,7 @@ Miscellany.prototype._pad_bottom = function(elem) {
   }
 }
 
-Miscellany.prototype._configure_guide_toggler = function() {
+jwesq.Miscellany.prototype._configure_guide_toggler = function() {
   $(document).keydown(function(event) {
       // Note that this will be triggered whenever the user hits 'g', even when
       // typing in a textarea.
@@ -178,12 +186,12 @@ Miscellany.prototype._configure_guide_toggler = function() {
 /*==============
   ImagePreloader
   ==============*/
-function ImagePreloader() {
+jwesq.ImagePreloader = function() {
   this._establish_preloaded();
   this._preload();
 }
 
-ImagePreloader.prototype._establish_preloaded = function() {
+jwesq.ImagePreloader.prototype._establish_preloaded = function() {
   this._to_preload = [];
 
   var self = this;
@@ -197,7 +205,7 @@ ImagePreloader.prototype._establish_preloaded = function() {
   self._to_preload.push('design/dot_hover.png');
 }
 
-ImagePreloader.prototype._preload = function() {
+jwesq.ImagePreloader.prototype._preload = function() {
   $.each(this._to_preload, function(i, src) {
     src = '/site_media/images/' + src;
     $('<img/>').attr('src', src);
@@ -209,11 +217,11 @@ ImagePreloader.prototype._preload = function() {
 /*==================
   HorizontalScroller
   ==================*/
-function HorizontalScroller(trigger_sel, panel_sel, panels_container_sel, on_trigger) {
+jwesq.HorizontalScroller = function(trigger_sel, panel_sel, panels_container_sel, on_trigger) {
   this._create(trigger_sel, panel_sel, panels_container_sel, on_trigger);
 }
 
-HorizontalScroller.prototype._create = function(trigger_sel, panel_sel, panels_container_sel, on_trigger) {
+jwesq.HorizontalScroller.prototype._create = function(trigger_sel, panel_sel, panels_container_sel, on_trigger) {
   var triggers         = $(trigger_sel);
   var panels           = $(panel_sel);
   var panels_container = $(panels_container_sel);
@@ -238,30 +246,30 @@ HorizontalScroller.prototype._create = function(trigger_sel, panel_sel, panels_c
     panels.removeClass('active');
     selected_panel.addClass('active');
     var offset = -(selected_panel.position().left - panels.eq(0).position().left);
-    panels_container.animate({ marginLeft: offset }, Config.project_panel_animation_duration);
+    panels_container.animate({ marginLeft: offset }, jwesq.Config.project_panel_animation_duration);
   });
 }
 
 /*===============
   ProjectSwitcher
   ===============*/
-function ProjectSwitcher(misc) {
+jwesq.ProjectSwitcher = function(misc) {
   var self = this;
-  new HorizontalScroller('#project_list .project', '.project_detail', '#projects_detail_container',
+  new jwesq.HorizontalScroller('#project_list .project', '.project_detail', '#projects_detail_container',
     function(args) {
-      var border_animator = new BorderAnimator(args.triggers, args.activated_trigger);
+      var border_animator = new jwesq.BorderAnimator(args.triggers, args.activated_trigger);
       if(!border_animator.animate())
         return false;
 
       window.location.hash = '/work/' + args.activated_trigger.attr('id').replace('_trigger', '');
-      self.collapse_height(args.selected_panel, Config.project_panel_animation_duration);
+      self.collapse_height(args.selected_panel, jwesq.Config.project_panel_animation_duration);
       return true;
     });
 }
 
 // Prevent viewport's dimensinos from expanding to height of tallest project.
 // Instead, set to height of active project.
-ProjectSwitcher.prototype.collapse_height = function(active_panel, duration) {
+jwesq.ProjectSwitcher.prototype.collapse_height = function(active_panel, duration) {
   $('#project_detail_viewport').animate({
     height: $(active_panel).outerHeight(true)
   }, duration);
@@ -272,16 +280,16 @@ ProjectSwitcher.prototype.collapse_height = function(active_panel, duration) {
 /*===================
   AboutTidbitSwitcher
   ===================*/
-function AboutTidbitSwitcher(misc) {
+jwesq.AboutTidbitSwitcher = function(misc) {
   this._container = $('#about_tidbits');
   this._triggers = this._container.find('.trigger');
   this._configure_scroller(misc);
   this._configure_auto_switcher();
 }
 
-AboutTidbitSwitcher.prototype._configure_scroller = function(misc) {
+jwesq.AboutTidbitSwitcher.prototype._configure_scroller = function(misc) {
   var self = this;
-  new HorizontalScroller(this._triggers, '.about_tidbit', '#about_tidbits_container',
+  new jwesq.HorizontalScroller(this._triggers, '.about_tidbit', '#about_tidbits_container',
     function(args) {
       // Click was generated by a human, not our automated switcher.
       if(!(args.extra_params && args.extra_params.auto_generated))
@@ -293,7 +301,7 @@ AboutTidbitSwitcher.prototype._configure_scroller = function(misc) {
     });
 }
 
-AboutTidbitSwitcher.prototype._configure_auto_switcher = function() {
+jwesq.AboutTidbitSwitcher.prototype._configure_auto_switcher = function() {
   var self = this;
 
   this._auto_switcher_timer = setInterval(function() {
@@ -306,7 +314,7 @@ AboutTidbitSwitcher.prototype._configure_auto_switcher = function() {
   }, 10000);
 }
 
-AboutTidbitSwitcher.prototype._halt_auto_switcher = function() {
+jwesq.AboutTidbitSwitcher.prototype._halt_auto_switcher = function() {
   clearInterval(this._auto_switcher_timer);
 }
 
@@ -315,13 +323,13 @@ AboutTidbitSwitcher.prototype._halt_auto_switcher = function() {
 /*==============
   BorderAnimator
   ==============*/
-function BorderAnimator(triggers, activated_trigger) {
+jwesq.BorderAnimator = function(triggers, activated_trigger) {
   this._old_selected = triggers.filter('.active');
   this._new_selected = activated_trigger;
-  this._animation_duration = Config.project_panel_animation_duration / 2;
+  this._animation_duration = jwesq.Config.project_panel_animation_duration / 2;
 }
 
-BorderAnimator.prototype.animate = function() {
+jwesq.BorderAnimator.prototype.animate = function() {
   // If an animation is currently in progress, there will be no "active"
   // element (as the class has been removed), and so we must halt before going
   // further.
@@ -347,7 +355,7 @@ BorderAnimator.prototype.animate = function() {
   return true;
 }
 
-BorderAnimator.prototype._create_border = function() {
+jwesq.BorderAnimator.prototype._create_border = function() {
   this._animated_border = $('<div id="animated_border"/>');
   this._animated_border.css({
     border:       '1px solid #cbcbcb',
@@ -372,7 +380,7 @@ BorderAnimator.prototype._create_border = function() {
   this._animated_border.css(pos).appendTo('#project_list');
 }
 
-BorderAnimator.prototype._enlarge = function(on_complete) {
+jwesq.BorderAnimator.prototype._enlarge = function(on_complete) {
   this._old_selected.removeClass('active');
 
   if(this._animation_direction === 'down') {
@@ -389,7 +397,7 @@ BorderAnimator.prototype._enlarge = function(on_complete) {
   });
 };
 
-BorderAnimator.prototype._reduce =  function(on_complete) {
+jwesq.BorderAnimator.prototype._reduce =  function(on_complete) {
   if(this._animation_direction === 'down') {
     var bottom = this._new_selected.position().top +
       this._new_selected.outerHeight(true);
@@ -422,11 +430,11 @@ BorderAnimator.prototype._reduce =  function(on_complete) {
   }, { duration: this._animation_duration, complete: on_complete });
 }
 
-BorderAnimator.prototype._calc_top_border_y = function(elem) {
+jwesq.BorderAnimator.prototype._calc_top_border_y = function(elem) {
   return elem.position().top + parseInt(elem.css('marginTop'), 10);
 }
 
-BorderAnimator.prototype._calc_bottom_border_y = function(elem) {
+jwesq.BorderAnimator.prototype._calc_bottom_border_y = function(elem) {
   return elem.position().top + elem.outerHeight(true) -
     parseInt(elem.css('marginBottom'), 10);
 }
@@ -439,7 +447,7 @@ BorderAnimator.prototype._calc_bottom_border_y = function(elem) {
 /*============
   TextInflater
   ============*/
-function TextInflater(elements, factor) {
+jwesq.TextInflater = function(elements, factor) {
   this._elements = $(elements);
 
   var self = this;
@@ -486,7 +494,7 @@ function TextInflater(elements, factor) {
 // Postion text with absolute positioning to remove it from the normal flow.
 // This way, font size adjustments won't cause adjacent elements to be
 // repositioned.
-TextInflater.prototype._lock_positions = function() {
+jwesq.TextInflater.prototype._lock_positions = function() {
   if(this._positions_locked)
     return;
   this._positions_locked = true;
@@ -510,7 +518,7 @@ TextInflater.prototype._lock_positions = function() {
   });
 }
 
-TextInflater.prototype._adjust_size = function(element, factor) {
+jwesq.TextInflater.prototype._adjust_size = function(element, factor) {
   element.animate({
     fontSize: factor*element.data('base_font_size')
   }, { duration: 200, queue: false });
@@ -521,12 +529,12 @@ TextInflater.prototype._adjust_size = function(element, factor) {
 /*=============
   UrlHashRouter
   =============*/
-function UrlHashRouter() {
+jwesq.UrlHashRouter = function() {
   this._routes = [];
 
 }
 
-UrlHashRouter.prototype.dispatch = function() {
+jwesq.UrlHashRouter.prototype.dispatch = function() {
   var hash = window.location.hash.substring(1); // Strip leading '#'.
 
   for(var i = 0; i < this._routes.length; i++) {
@@ -538,7 +546,7 @@ UrlHashRouter.prototype.dispatch = function() {
   }
 }
 
-UrlHashRouter.prototype.register_route = function(path, callback) {
+jwesq.UrlHashRouter.prototype.register_route = function(path, callback) {
   this._routes.push([path, callback]);
 }
 
@@ -547,7 +555,7 @@ UrlHashRouter.prototype.register_route = function(path, callback) {
 /*===========
   ContactForm
   ===========*/
-function ContactForm() {
+jwesq.ContactForm = function() {
   var self = this;
 
   $('#contact_form form').live('submit', function() {
@@ -580,7 +588,7 @@ function ContactForm() {
   });
 }
 
-ContactForm.prototype._disappear = function(form, on_complete) {
+jwesq.ContactForm.prototype._disappear = function(form, on_complete) {
   var visible_elements = form.find('.label_and_error, .message_field, ' +
     '.overall_error, input').toArray();
   // Sort randomly.
@@ -605,12 +613,12 @@ ContactForm.prototype._disappear = function(form, on_complete) {
 /*====================
   ProjectImageSwitcher
   ====================*/
-function ProjectImageSwitcher() {
+jwesq.ProjectImageSwitcher = function() {
   this._configure_controls_display();
   this._configure_controls_action();
 }
 
-ProjectImageSwitcher.prototype._configure_controls_display = function() {
+jwesq.ProjectImageSwitcher.prototype._configure_controls_display = function() {
   var active_project_image_container = $('.project_detail.active .project_images');
   var active_project_images = active_project_image_container.find('img');
   var animation_duration = 250;
@@ -634,7 +642,7 @@ ProjectImageSwitcher.prototype._configure_controls_display = function() {
   });
 }
 
-ProjectImageSwitcher.prototype._manipulate_controls = function(active_image) {
+jwesq.ProjectImageSwitcher.prototype._manipulate_controls = function(active_image) {
   var controls = active_image.parents('.project_images').find('.project_image_controls');
 
   $.each(['prev', 'next'], function(i, type) {
@@ -651,7 +659,7 @@ ProjectImageSwitcher.prototype._manipulate_controls = function(active_image) {
   return controls;
 }
 
-ProjectImageSwitcher.prototype._configure_controls_action = function() {
+jwesq.ProjectImageSwitcher.prototype._configure_controls_action = function() {
   var self = this;
   $('.project_image_controls .prev, .project_image_controls .next').click(function() {
     var control = $(this);
