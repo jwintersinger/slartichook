@@ -1,5 +1,8 @@
-Prevent invisible project images from loading when page loads
-Push Slartichook to Github
+Prevent invisible project images from loading when page loads, since they add ~360 KiB to every uncached load
+  None of following stop images from being requested by browser:
+    Setting "display: none" or "visibility: hidden" on img elements
+    Setting "display: none" on div parent of img elements
+    Calling $('img').removeAttr('src') on $(document).load, as per Lazy Load Plugin (http://www.appelsiini.net/projects/lazyload)
 Namespace JS
 Prevent caching when DEBUG = True
 
