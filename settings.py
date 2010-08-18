@@ -4,6 +4,12 @@ from settings_deployment import *
 
 TEMPLATE_DEBUG = DEBUG
 
+# If DEBUG not enabled, leave CACHE_BACKEND to be set by appengine_django, or
+# by Django itself -- regardless, we don't set it, and when we deploy, caching
+# works as it should.
+if DEBUG:
+  CACHE_BACKEND = 'dummy://'
+
 MANAGERS = ADMINS
 
 #DATABASES = {
