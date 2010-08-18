@@ -197,8 +197,15 @@ em           { font-style: italic; }
   left: -64px;
 }
 
-#header_content h1 span {
-  display: none;
+#header_content h1 span { display: none; }
+
+#header_darkening {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 693px;
+  height: 78px;
+  background-image: url('../images/design/header_darkening.png');
 }
 
 #navigation {
