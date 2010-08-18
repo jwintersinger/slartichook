@@ -8,6 +8,4 @@ Prevent caching when DEBUG = True
 Design:
   Extend "about" vertical border
   Blog section
-  Ensure header is right-aligned
-  Text shadows on headers
   Place border around project image viewport
