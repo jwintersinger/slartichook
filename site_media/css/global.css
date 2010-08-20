@@ -19,6 +19,7 @@
 * { z-index: 0; }
 
 
+
 /*================
   General elements
   ================*/
@@ -132,9 +133,6 @@ h1, h2, h3, h4, h5, h6, #navigation li a {
 
 
 
-
-
-
 /*======
   Footer
   ======*/
@@ -143,3 +141,24 @@ h1, h2, h3, h4, h5, h6, #navigation li a {
   font-size: 0.8em;
   opacity: 0.5;
 }
+
+
+
+/*=======
+  Section
+  =======*/
+.section {
+  border-bottom: 1px solid #c9c9c9;
+  border-top: 1px solid #fefefe;
+}
+
+/* Can't use :first-child pseudo class, as #header is a sibling, meaning
+ * first_section is *not* the first child of its parent. */
+.section.first {
+  margin-top: 78px;
+  border-top-style: none;
+}
+
+.section       .section_content { padding: 40px 0 40px 0;    }
+.section.first .section_content { padding-top: 60px;         }
+.section.last                   { border-bottom-style: none; }

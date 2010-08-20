@@ -1,11 +1,6 @@
 /*===============
   General classes
   ===============*/
-.container {
-  margin-top: 78px;
-  padding-top: 60px;
-}
-
 .button {
   background-color: rgb(220, 220, 220);
   padding: 4px 6px 4px 6px;
@@ -30,9 +25,9 @@
 /*=========
   Blog post
   =========*/
-/*---------
-  Container
-  ---------*/
+/*----------
+  Miscellany
+  ----------*/
 .post {
   /* Relative position needed so that .posted_at will be positioned relative to this container. */
   position: relative;

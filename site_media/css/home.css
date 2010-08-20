@@ -1,26 +1,6 @@
 /*===============
   General classes
   ===============*/
-.section {
-  border-bottom: 1px solid #c9c9c9;
-  border-top: 1px solid #fefefe;
-}
-
-.section_content {
-  padding: 40px 0 40px 0;
-}
-
-/* Can't use :first-child pseudo class, as #header is a sibling, meaning
- * first_section is *not* the first child of its parent. */
-.section.first {
-  margin-top: 78px;
-  border-top-style: none;
-}
-
-.section.last {
-  border-bottom-style: none;
-}
-
 .section_label_background {
   float: left;
   background-image: url('../images/design/section_label_pattern.png');
@@ -99,11 +79,6 @@
 /*----------
   Miscellany
   ----------*/
-#about {
-  /* Extra top padding since this is first section. */
-  padding-top: 60px;
-}
-
 #about .section_label {
   width: 12px;
   height: 66px;

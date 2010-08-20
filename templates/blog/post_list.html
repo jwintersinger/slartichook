@@ -9,51 +9,53 @@
 {% block content %}
   {{ recent_post }}
 
-  <div class="container">
-    <div id="posts" class="prepend-1 span-10 colborder">
-    {% for post in paginated_posts.object_list %}
-      <div class="post">
-        <h1 class="title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
+  <div class="section first">
+    <div class="container section_content">
+      <div id="posts" class="prepend-1 span-10 colborder">
+      {% for post in paginated_posts.object_list %}
+        <div class="post">
+          <h1 class="title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
 
-        <div class="body">
-          {{ post.body|safe|markdown|truncatewords_html:40 }}
+          <div class="body">
+            {{ post.body|safe|markdown|truncatewords_html:40 }}
+          </div>
+
+          <p class="posted_at">
+            <span class="month">{{ post.created_at|date:"M" }}</span>
+            <span class="day">{{ post.created_at|date:"j" }}</span>
+            <span class="year">{{ post.created_at|date:"Y" }}</span>
+          </p>
+
+          <div class="metadata">
+            <span class="button"><a href="{{ post.get_absolute_url }}">Read more</a></span>
+            {% include "blog/_post_tag_list.html" %}
+          </div>
         </div>
-
-        <p class="posted_at">
-          <span class="month">{{ post.created_at|date:"M" }}</span>
-          <span class="day">{{ post.created_at|date:"j" }}</span>
-          <span class="year">{{ post.created_at|date:"Y" }}</span>
-        </p>
-
-        <div class="metadata">
-          <span class="button"><a href="{{ post.get_absolute_url }}">Read more</a></span>
-          {% include "blog/_post_tag_list.html" %}
-        </div>
-      </div>
-    {% endfor %}
-
-      <div class="page_nav">
-      {% if posts.has_previous %}
-        <span class="button"><a href="{% url blog.views.post_list page=posts.previous_page_number %}">Previous</a></span>
-      {% endif %}
-      {% if posts.has_next %}
-        <span class="button"><a href="{% url blog.views.post_list page=posts.next_page_number %}">Next</a></span>
-      {% endif %}
-      </div>
-    </div>
-
-    <div id="secondary" class="span-12 last">
-      <h2>Recent Posts</h2>
-      <ul id="recent_posts">
-      {% for post in recent_posts %}
-        <li>
-          <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-          <span class="date">{{ post.created_at|date:"F jS, Y" }}</span>
-        </li>
       {% endfor %}
-      </ul>
 
-      <p><a href="{% url blog-archive %}">View archive &rarr;</a></p>
+        <div class="page_nav">
+        {% if posts.has_previous %}
+          <span class="button"><a href="{% url blog.views.post_list page=posts.previous_page_number %}">Previous</a></span>
+        {% endif %}
+        {% if posts.has_next %}
+          <span class="button"><a href="{% url blog.views.post_list page=posts.next_page_number %}">Next</a></span>
+        {% endif %}
+        </div>
+      </div>
+
+      <div id="secondary" class="span-12 last">
+        <h2>Recent Posts</h2>
+        <ul id="recent_posts">
+        {% for post in recent_posts %}
+          <li>
+            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+            <span class="date">{{ post.created_at|date:"F jS, Y" }}</span>
+          </li>
+        {% endfor %}
+        </ul>
+
+        <p><a href="{% url blog-archive %}">View archive &rarr;</a></p>
+      </div>
     </div>
   </div>
 {% endblock %}
