@@ -1,4 +1,9 @@
 {% extends "base.html" %}
+
+{% block additional_css %}
+  <link rel="stylesheet" href="{{ MEDIA_URL }}css/home.css" media="screen, projection" />
+{% endblock %}
+
 {% block content %}
   <div class="section first">
     <!-- Blueprint's grid.css demands that this div be given a class of

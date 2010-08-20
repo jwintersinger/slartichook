@@ -1,0 +1,145 @@
+/* This project was built on the Blueprint CSS frame v0.9.1, released August 20, 2009. */
+
+/*=====
+  Guide
+  =====*/
+#guide {
+  display: none;
+  position: absolute;
+  top: 110px;
+  left: 119px;
+  width: 1018px;
+  height: 1090px;
+
+  background-image: url('../images/design/guide.png');
+  opacity: 0.3;
+  z-index: -9999;
+}
+
+* { z-index: 0; }
+
+
+/*================
+  General elements
+  ================*/
+body {
+  font-size: 0.75em;
+  background-color: white;
+  background-image: url('../images/design/background_pattern.png');
+}
+
+body, textarea { font-family: Arial, sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.6em; }
+h3 { font-size: 1.2em; }
+
+a {
+  color: black;
+  text-decoration: none;
+  border-bottom-width: 1px;
+  border-bottom-style: dotted;
+}
+
+a:hover      { color: #427bda;     }
+p            { margin-bottom: 1em; }
+p:last-child { margin-bottom: 0;   }
+/* I don't know precisely why this is needed, but otherwise <em> element
+ * contents are not italicized. */
+em           { font-style: italic; }
+
+h1, h2, h3, h4, h5, h6, #navigation li a {
+  text-shadow: 1px 1px 2px white;
+}
+
+
+
+/*======
+  Header
+  ======*/
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 74px;
+  /* Add background colour so that page content not visible behind header when
+   * user scrolls down page. */
+  background-color: #f2f2f2;
+  background-image: url('../images/design/header_background.png');
+  z-index: 1;
+}
+
+#header_bottom_border {
+  background-image: url('../images/design/header_bottom_border.png');
+  background-repeat: repeat-x;
+  background-position: left bottom;
+  height: 78px;
+}
+
+#header_content {
+  width: 950px;
+  margin: 0 auto 0 auto;
+}
+
+
+#header_content h1 {
+  width: 386px;
+  height: 84px;
+  background-image: url('../images/design/logo.png');
+  margin-top: 18px;
+  float: left;
+  position: relative;
+  left: -64px;
+}
+
+#header_content h1 span { display: none; }
+
+#header_darkening {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 693px;
+  height: 78px;
+  background-image: url('../images/design/header_darkening.png');
+}
+
+#navigation {
+  float: right;
+  bottom: 0px;
+  margin-top: 42px;
+}
+
+#navigation li {
+  float: left;
+  list-style-type: none;
+  margin-left: 4em;
+}
+
+#navigation li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: black;
+  border-bottom-style: none;
+}
+
+
+
+
+
+
+/*======
+  Footer
+  ======*/
+#footer {
+  padding: 20px 0 15px 0;
+  font-size: 0.8em;
+  opacity: 0.5;
+}

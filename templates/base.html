@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/blueprint/ie.css" type="text/css" media="screen, projection" />
   <![endif]-->
 
-    <link rel="stylesheet" href="{{ MEDIA_URL }}css/main.css" media="screen, projection" />
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/global.css" media="screen, projection" />
+    {% block additional_css %}{% endblock %}
 
     <link rel="icon" type="image/x-icon" href="{{ MEDIA_URL }}images/design/favicon.ico" />
     <meta name="keywords" content="Wintersinger, Jeff Wintersinger" />
