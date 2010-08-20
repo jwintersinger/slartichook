@@ -1,0 +1,118 @@
+/*===============
+  General classes
+  ===============*/
+.container {
+  margin-top: 78px;
+  padding-top: 60px;
+}
+
+.button {
+  background-color: rgb(220, 220, 220);
+  padding: 4px 6px 4px 6px;
+  border: 1px solid #747474;
+  border-left-color: #fdfdfd;
+  border-top-color: #fdfdfd;
+}
+
+
+.button a { border-bottom-style: none; }
+
+
+
+/*==========
+  Miscellany
+  ==========*/
+#posts        { border-right-color: #cbcbcb; }
+.page_nav > * { float: right;                }
+
+
+
+/*=========
+  Blog post
+  =========*/
+/*---------
+  Container
+  ---------*/
+.post {
+  /* Relative position needed so that .posted_at will be positioned relative to this container. */
+  position: relative;
+  margin-bottom: 5em;
+}
+
+
+/*-----
+  Title
+  -----*/
+.post .title {
+  margin-bottom: 0.4em;
+  font-size: 1.4em;
+  line-height: 1;
+}
+
+.post .title a { border-bottom-style: none; }
+
+
+/*----
+  Body
+  ----*/
+.post .body ul { margin-left: 3em;          }
+
+
+/*--------
+  Metadata
+  --------*/
+.post .tag_list { padding-left: 0.5em; }
+.post .metadata { margin-top: 1em;     }
+.post .metadata > * {
+  display: inline;
+  opacity: 0.7
+}
+
+
+/*----
+  Date
+  ----*/
+.post .posted_at {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-left: -60px;
+}
+
+.post .posted_at > * {
+  display: block;
+  line-height: 1.1;
+}
+
+.post .posted_at .day {
+  font-size: 1.8em;
+  float: left;
+}
+
+.post .posted_at .year {
+  position: relative;
+  top: 8px;
+  left: 1em;
+  float: left;
+
+  transform:                rotate(-90deg);
+  -webkit-transform:        rotate(-90deg);
+  -moz-transform:           rotate(-90deg);
+  transform-origin:         left bottom;
+  -webkit-transform-origin: left bottom;
+  -moz-transform-origin:    left bottom;
+}
+
+
+
+/*============
+  Recent posts
+  ============*/
+#recent_posts    { list-style-type: none; }
+#recent_posts li { margin-bottom: 0.7em;  }
+
+#recent_posts .date {
+  display: block;
+  clear: both;
+  opacity: 0.5;
+}

@@ -8,3 +8,6 @@ Design:
   Extend "about" vertical border
   Blog section
   Place border around project image viewport
+
+Blog:
+  Investigate fetching of posts on index -- are all objects fetched to produce paginatd list of posts?

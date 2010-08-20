@@ -1,11 +1,11 @@
 from django.core import paginator, urlresolvers
 from django.http import HttpResponseRedirect
-from django.shortcuts import render_to_response
+from django.views.generic.simple import direct_to_template
 from blog.models import Post
 
 def post_list(request, page=None):
   #_create_test_post()
-  posts = Post.objects.all()
+  posts = Post.all()
   posts.order('-created_at')
 
   if not page:
@@ -16,13 +16,17 @@ def post_list(request, page=None):
   except (paginator.EmptyPage, paginator.InvalidPage):
     return HttpResponseRedirect(urlresolvers.reverse('blog.views.post_list'))
 
-  return render_to_response('blog/post_list.html', {'posts': paginated_posts})
+  return direct_to_template(request, 'blog/post_list.html', {
+    'paginated_posts': paginated_posts,
+    'recent_posts':    Post.all().fetch(5)
+  })
 
 def _create_test_post():
   from google.appengine.ext import db
+  from django.contrib.webdesign import lorem_ipsum
   p = Post(
     title = 'Happy happy',
-    body = 'Socks.\n\n* Whoa\n* Yeah',
+    body = (2*'\n').join(lorem_ipsum.paragraphs(4)),
     #user = users.get_current_user(),
     tags = [db.Category('bonners'), db.Category('cheese'), db.Category('weiners')],
     slug = 'phallus',
@@ -32,7 +36,9 @@ def _create_test_post():
 def post_detail(request, slug):
   post = Post.objects.all()
   post.filter('slug =', slug)
-  return render_to_response('blog/post_detail.html', {'post': post.fetch(1)[0]})
+  return direct_to_template(request, 'blog/post_detail.html', {
+    'post': post.fetch(1)[0],
+  })
 
 def post_archive(request, tag=None):
   posts = Post.objects.all()
@@ -40,7 +46,7 @@ def post_archive(request, tag=None):
   if tag:
     posts.filter('tags =', tag)
 
-  return render_to_response('blog/post_archive.html', {
+  return direct_to_template(request, 'blog/post_archive.html', {
     'posts': posts,
     'tag':   tag
   })
