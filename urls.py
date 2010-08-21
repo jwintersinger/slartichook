@@ -16,8 +16,13 @@ urlpatterns = patterns('',
     # (r'^admin/', include(admin.site.urls)),
     url(r'^blog/',    include('blog.urls')),
     url(r'^contact/', include('contact.urls')),
-    url(r'^$',        include('home.urls')),
+
+    # If the equivalent line is in home/urls.py, reverse-matching the route via
+    # "{% url home %} in a template results in an empty string being returned.
+    # To get the desired "/", the route must be here instead.
+    url(r'^$',        'home.views.home', name='home'),
     # For some reason, placing the equivalent line in home/urls.py results in
-    # the route never being matched, so I place it here instead.
+    # the route never being matched, so instead of using home/urls.py, I place
+    # it here instead.
     url(r'^clear/$',  'home.views.clear_cache'),
 )
