@@ -12,6 +12,12 @@ indexes:
 
 - kind: Post
   properties:
+  - name: slug
+  - name: published_at
+    direction: desc
+
+- kind: Post
+  properties:
   - name: tags
-  - name: created_at
+  - name: published_at
     direction: desc
