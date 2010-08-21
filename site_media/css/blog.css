@@ -17,8 +17,8 @@
 /*==========
   Miscellany
   ==========*/
-#posts        { border-right-color: #cbcbcb; }
-.page_nav > * { float: right;                }
+.colborder    { border-color: #cbcbcb; }
+.page_nav > * { float: right;          }
 
 
 

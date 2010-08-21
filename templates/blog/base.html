@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block additional_css %}
+  <link rel="stylesheet" href="{{ MEDIA_URL }}css/blog.css" media="screen, projection" />
+{% endblock %}
+
+{% block content %}
+  <div class="section first">
+    <div class="container section_content">
+      {% block blog_content %}{% endblock %}
+
+      <div id="secondary" class="span-12 last">
+        <h2>Recent Posts</h2>
+        <ul id="recent_posts">
+        {% for post in recent_posts %}
+          <li>
+            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+            <span class="date">{{ post.created_at|date:"F jS, Y" }}</span>
+          </li>
+        {% endfor %}
+        </ul>
+
+        <p><a href="{% url blog-archive %}">View archive &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
