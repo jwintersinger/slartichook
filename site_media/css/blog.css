@@ -38,7 +38,7 @@
   Title
   -----*/
 .post .title {
-  margin-bottom: 0.4em;
+  margin-bottom: 0.6em;
   font-size: 1.4em;
   line-height: 1;
 }
@@ -85,7 +85,7 @@
 
 .post .posted_at .year {
   position: relative;
-  top: 8px;
+  top: 0.5em;
   left: 1em;
   float: left;
 

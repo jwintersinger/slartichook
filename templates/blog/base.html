@@ -15,7 +15,7 @@
         {% for post in recent_posts %}
           <li>
             <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-            <span class="date">{{ post.created_at|date:"F jS, Y" }}</span>
+            <span class="date">{{ post.created_at|timesince }} ago</span>
           </li>
         {% endfor %}
         </ul>
