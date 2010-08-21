@@ -17,6 +17,8 @@ urlpatterns = patterns('',
     url(r'^blog/',    include('blog.urls')),
     url(r'^contact/', include('contact.urls')),
 
+    url(r'^feeds/posts/$', 'blog.views.latest_posts', name='blog-posts-feed'),
+
     # If the equivalent line is in home/urls.py, reverse-matching the route via
     # "{% url home %} in a template results in an empty string being returned.
     # To get the desired "/", the route must be here instead.

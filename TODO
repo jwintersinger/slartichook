@@ -11,3 +11,8 @@ Design:
 
 Blog:
   Investigate fetching of posts on index -- are all objects fetched to produce paginatd list of posts?
+  Store author of posts
+  Tag cloud
+  Comments
+  Authoring tool
+  Atom feed
