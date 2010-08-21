@@ -23,12 +23,14 @@ def post_list(request, page=None):
 def _create_test_post():
   from google.appengine.ext import db
   from django.contrib.webdesign import lorem_ipsum
+  from datetime import datetime
   p = Post(
     title = 'Happy happy',
     body = (2*'\n').join(lorem_ipsum.paragraphs(4)),
     #user = users.get_current_user(),
     tags = [db.Category('bonners'), db.Category('cheese'), db.Category('weiners')],
     slug = 'phallus',
+    created_at = datetime.fromtimestamp(1282380470 - 365*24*60*60),
   )
   p.put()
 
