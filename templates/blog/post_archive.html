@@ -1,17 +1,19 @@
-{% extends "base.html" %}
+{% extends "blog/base.html" %}
 {% load blog_misc %}
 {% block title %}Archive{% endblock %}
 
-{% block content %}
-  <h1>{% if not tag %} All posts {% else %} Posts filed under {{ tag }} {% endif %}</h1>
-  {% regroup posts by created_at.month as posts_by_month %}
-  {% for month in posts_by_month %}
-    <dt>{{ month.grouper|int_to_month_name }} {{ month.list.0.created_at|date:"Y" }}</dt>
-    {% for post in month.list %}
-    <dd>{{ post.created_at|date:"F jS" }}: <a href="{{ post.get_absolute_url }}"
-      >{{ post.title }}</a></dd>
+{% block blog_content %}
+  <div id="post_archive" class="prepend-1 span-10 colborder">
+    <h1>{% if not tag %} All posts {% else %} Posts filed under {{ tag }} {% endif %}</h1>
+    {% regroup posts by created_at.month as posts_by_month %}
+    {% for month in posts_by_month %}
+      <dt>{{ month.grouper|int_to_month_name }} {{ month.list.0.created_at|date:"Y" }}</dt>
+      {% for post in month.list %}
+      <dd>{{ post.created_at|date:"F jS" }}: <a href="{{ post.get_absolute_url }}"
+        >{{ post.title }}</a></dd>
+      {% endfor %}
+    {% empty %}
+      <p>No posts{% if tag %} filed under {{ tag }} {% endif %}.</p>
     {% endfor %}
-  {% empty %}
-    <p>No posts{% if tag %} filed under {{ tag }} {% endif %}.</p>
-  {% endfor %}
+  </div>
 {% endblock %}
