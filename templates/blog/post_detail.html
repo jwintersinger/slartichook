@@ -1,6 +1,6 @@
 {% extends "blog/base.html" %}
 {% load markup %}
-{% block title %}{{ post.title }}{% endblock %}
+{% block title %}{{ post.title }}{{ block.super }}{% endblock %}
 
 {% block blog_content %}
   {% comment %}

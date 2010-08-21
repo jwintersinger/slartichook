@@ -1,6 +1,6 @@
 {% extends "blog/base.html" %}
 {% load blog_misc %}
-{% block title %}Archive{% endblock %}
+{% block title %}{% if tag %}{{ tag }} {%endif %}Archive{{ block.super }}{% endblock %}
 
 {% block blog_content %}
   <div id="post_archive" class="prepend-1 span-10 colborder">
