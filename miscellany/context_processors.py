@@ -17,3 +17,6 @@ def google_analytics(request):
     return {'google_analytics_account': settings.GOOGLE_ANALYTICS_ACCOUNT}
   except AttributeError:
     return {}
+
+def site_name(request):
+  return {'site_name': settings.SITE_NAME}

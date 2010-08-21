@@ -80,6 +80,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
     'django.core.context_processors.debug',
     'miscellany.context_processors.google_analytics',
+    'miscellany.context_processors.site_name',
     'blog.context_processors.recent_posts',
     #'django.core.context_processors.i18n',
 )

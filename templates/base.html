@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Jeff Wintersinger, Esq.</title>
+    <title>{{ site_name }}</title>
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script type="text/javascript" src="{{ MEDIA_URL }}js/main.js"></script>
@@ -43,7 +43,7 @@
       some other elements scattered about) would be unnecessary. -->
       <div id="header_bottom_border">
         <div id="header_content">
-          <a href="{% url home %}"><h1><span>Jeff Wintersinger, Esq.</span></h1></a>
+          <a href="{% url home %}"><h1><span>{{ site_name }}</span></h1></a>
           <div id="navigation">
             <ul>
               <li><a href="{% url home %}#/about">About</a></li>

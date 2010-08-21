@@ -1,11 +1,12 @@
+import settings
 from django.core import urlresolvers
 from django.contrib.syndication.views import Feed
 from blog.models import Post
 
 class LatestPosts(Feed):
-  title                = 'Giant phallus'
+  title                = settings.SITE_NAME
   link                 = urlresolvers.reverse('blog-home')
-  description          = 'Latests posts from giant phallus.'
+  description          = 'Latests posts from %s' % settings.SITE_NAME
   title_template       = 'feeds/blog_post_title.html'
   description_template = 'feeds/blog_post_description.html'
 

@@ -21,3 +21,5 @@ CONTACT = {
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'If I had a secret, I would whisper it in your ear.'
+
+SITE_NAME = 'Jeff Wintersinger, Esq.'
