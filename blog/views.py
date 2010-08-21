@@ -18,7 +18,6 @@ def post_list(request, page=None):
 
   return direct_to_template(request, 'blog/post_list.html', {
     'paginated_posts': paginated_posts,
-    'recent_posts':    Post.all().fetch(5)
   })
 
 def _create_test_post():
