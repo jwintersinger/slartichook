@@ -18,6 +18,8 @@
     {% block additional_css %}{% endblock %}
 
     <link rel="icon" type="image/x-icon" href="{{ MEDIA_URL }}images/design/favicon.ico" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site_name }} Blog" href="{% url blog-posts-feed %}" />
+
     <meta name="keywords" content="Wintersinger, Jeff Wintersinger" />
     <meta name="description" content="My name is Jeff Wintersinger, and I say good day." />
 
