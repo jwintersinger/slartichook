@@ -40,6 +40,8 @@ h1 { font-size: 2em; }
 h2 { font-size: 1.6em; }
 h3 { font-size: 1.2em; }
 
+h1, h2, h3, h4, h5, h6, #navigation li a { text-shadow: 1px 1px 2px white; }
+
 a {
   color: black;
   text-decoration: none;
@@ -54,9 +56,12 @@ p:last-child { margin-bottom: 0;   }
  * contents are not italicized. */
 em           { font-style: italic; }
 
-h1, h2, h3, h4, h5, h6, #navigation li a {
-  text-shadow: 1px 1px 2px white;
-}
+
+
+/*===============
+  General classes
+  ===============*/
+.colborder { border-color: #cbcbcb; }
 
 
 

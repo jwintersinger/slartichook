@@ -85,10 +85,6 @@
   background-image: url('../images/design/about.png');
 }
 
-#about_intro {
-  border-color: #cbcbcb;
-}
-
 
 /*-------------
   About tidbits
@@ -291,7 +287,6 @@
   background-image: url('../images/design/contact.png');
 }
 
-#contact_form                { border-color: #cbcbcb;  }
 #contact_form h2             { margin-bottom: 16px;    }
 #contact_form .field         { height: 4em;            }
 #contact_form .field *       { float: left;            }
