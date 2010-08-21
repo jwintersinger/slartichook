@@ -11,4 +11,3 @@ Design:
 
 Blog:
   Investigate fetching of posts on index -- are all objects fetched to produce paginatd list of posts?
-  Fix "Recent posts" display on detail and archive

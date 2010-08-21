@@ -55,8 +55,8 @@
 /*--------
   Metadata
   --------*/
-.post .tag_list { padding-left: 0.5em; }
-.post .metadata { margin-top: 1em;     }
+.post .read_more { margin-right: 0.5em; }
+.post .metadata  { margin-top: 1em;     }
 .post .metadata > * {
   display: inline;
   opacity: 0.7

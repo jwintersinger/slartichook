@@ -3,12 +3,24 @@
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block blog_content %}
-  <div id="post" class="prepend-1 span-10 colborder">
-    <h1>{{ post.title }}</h1>
-    {{ post.created_at|date:"F jS, Y" }}
+  {% comment %}
+    div#post_container is needed to specify the Blueprint classes. If those
+    classes are directly applied to div.post, the prepend-1 will cause the date
+    to be positioned excessively far outside div.post.
+  {% endcomment %}
+  <div id="post_container" class="prepend-1 span-10 colborder">
+    <div class="post">
+      <h1 class="title">{{ post.title }}</h1>
 
-    {{ post.body|safe|markdown }}
+      <div class="body">
+        {{ post.body|safe|markdown }}
+      </div>
 
-    {% include "blog/_post_tag_list.html" %}
+      {% include "blog/_posted_at.html" %}
+
+      <div class="metadata">
+        {% include "blog/_post_tag_list.html" %}
+      </div>
+    </div>
   </div>
 {% endblock %}

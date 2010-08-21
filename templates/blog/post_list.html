@@ -12,14 +12,10 @@
         {{ post.body|safe|markdown|truncatewords_html:40 }}
       </div>
 
-      <p class="posted_at">
-        <span class="month">{{ post.created_at|date:"M" }}</span>
-        <span class="day">{{ post.created_at|date:"j" }}</span>
-        <span class="year">{{ post.created_at|date:"Y" }}</span>
-      </p>
+      {% include "blog/_posted_at.html" %}
 
       <div class="metadata">
-        <span class="button"><a href="{{ post.get_absolute_url }}">Read more</a></span>
+        <span class="read_more button"><a href="{{ post.get_absolute_url }}">Read more</a></span>
         {% include "blog/_post_tag_list.html" %}
       </div>
     </div>
