@@ -5,8 +5,7 @@ from blog.models import Post
 
 def post_list(request, page=None):
   #_create_test_post()
-  posts = Post.all()
-  posts.order('-created_at')
+  posts = Post.visible()
 
   if not page:
     page = 1
@@ -30,23 +29,21 @@ def _create_test_post():
     #user = users.get_current_user(),
     tags = [db.Category('bonners'), db.Category('cheese'), db.Category('weiners')],
     slug = 'phallus',
-    created_at = datetime.fromtimestamp(1282380470 - 365*24*60*60),
+    published_at = datetime.fromtimestamp(1282380470 - 365*24*60*60),
   )
   p.put()
 
 def post_detail(request, slug):
-  post = Post.objects.all()
+  post = Post.visible()
   post.filter('slug =', slug)
   return direct_to_template(request, 'blog/post_detail.html', {
     'post': post.fetch(1)[0],
   })
 
 def post_archive(request, tag=None):
-  posts = Post.objects.all()
-  posts.order('-created_at')
+  posts = Post.visible()
   if tag:
     posts.filter('tags =', tag)
-
   return direct_to_template(request, 'blog/post_archive.html', {
     'posts': posts,
     'tag':   tag
